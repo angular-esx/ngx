@@ -1,0 +1,6 @@
+{
+  "name": "ngx-framework",
+  "version": "0.0.1",
+  "description": "A framework for ESM development with @angular",
+  "license": "MIT"
+}
