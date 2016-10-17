@@ -1,0 +1,37 @@
+﻿@import './_mixins.scss';
+
+:host(.ngx-label) {
+  display: inline-block;
+  font-size: $ngx-label-font-size;
+  font-weight: $ngx-label-font-weight;
+  line-height: $ngx-label-line-height;
+  padding: $ngx-label-padding;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  @include ngx-border-radius($ngx-label-border-radius, all, $ngx-label-configs);
+
+  /deep/ a {
+    text-decoration: none;
+    color: ngx-color($ngx-color-white, light);
+  }
+
+  &:empty {
+    display: none;
+  }
+
+  @include ngx-label-type-pill();
+  
+
+  @include ngx-label-variant(default, $ngx-label-default);
+
+  @include ngx-label-variant(primary, $ngx-label-primary);
+
+  @include ngx-label-variant(info, $ngx-label-info);
+
+  @include ngx-label-variant(success, $ngx-label-success);
+
+  @include ngx-label-variant(warning, $ngx-label-warning);
+
+  @include ngx-label-variant(danger, $ngx-label-danger);
+}
