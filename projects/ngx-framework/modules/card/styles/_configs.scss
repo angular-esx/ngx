@@ -1,0 +1,16 @@
+@import '../../../cores/styles/ngx.config.scss';
+
+$ngx-card-configs: (
+  enable-radius: map-get($ngx-border-configs, enable-radius)
+) !default;
+
+$ngx-card-actions-configs: (
+  enable-justify-content: true,
+  enable-align-self: true
+) !default;
+
+$ngx-card-image-configs: (
+  enable-align-self: true
+) !default;
+
+$ngx-card-variant-configs: $ngx-variant-configs !default;

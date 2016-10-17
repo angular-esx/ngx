@@ -1,0 +1,111 @@
+﻿@import '../../../cores/styles/palette/palette.scss';
+@import '../../../cores/styles/border/border.scss';
+
+@import './_configs.scss';
+
+
+$ngx-card-padding: 1.25rem !default;
+$ngx-card-boder: 1px solid !default;
+$ngx-card-boder-radius: ngx-border-radius(base) !default;
+
+
+$ngx-card-title-margin: 0 0 .75rem 0 !default;
+
+
+$ngx-card-subtitle-margin: calc(.75rem / -2) 0 .75rem  0 !default;
+
+
+$ngx-card-image-margin: .75rem -1.31rem !default;
+$ngx-card-image-first-child-margin-top: -1.28rem !default;
+$ngx-card-image-last-child-margin-bottom: -1.28rem !default;
+$ngx-card-image-width: calc(100% + 2.62rem) !default;
+
+
+$ngx-card-actions-margin: 2rem 0 0 0 !default;
+$ngx-card-actions-item-margin: 0 0 0 .5rem !default;
+
+
+$ngx-card-primary: (
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-primary),
+    border-color: ngx-color($ngx-color-primary)
+  )
+) !default;
+
+$ngx-card-secondary: (
+  default: (
+    foreground-color: ngx-color($ngx-color-gray, dark),
+    background-color: ngx-color($ngx-color-secondary),
+    border-color: ngx-color($ngx-color-black, light-2)
+  )
+) !default;
+
+$ngx-card-info: (
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-info),
+    border-color: ngx-color($ngx-color-info)
+  )
+) !default;
+
+$ngx-card-success: (
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-success),
+    border-color: ngx-color($ngx-color-success)
+  )
+) !default;
+
+$ngx-card-warning: (
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-warning),
+    border-color: ngx-color($ngx-color-warning)
+  )
+) !default;
+
+$ngx-card-danger: (
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-danger),
+    border-color: ngx-color($ngx-color-danger),
+  )
+) !default;
+
+
+$ngx-card-subtitle-primary: (
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light, $ngx-opacity-disabled)
+  )
+) !default;
+
+$ngx-card-subtitle-secondary: (
+  default: (
+    foreground-color: ngx-color($ngx-color-gray, dark, $ngx-opacity-disabled)
+  )
+) !default;
+
+$ngx-card-subtitle-info: (
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light, $ngx-opacity-disabled)
+  )
+) !default;
+
+$ngx-card-subtitle-success: (
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light, $ngx-opacity-disabled)
+  )
+) !default;
+
+$ngx-card-subtitle-warning: (
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light, $ngx-opacity-disabled)
+  )
+) !default;
+
+$ngx-card-subtitle-danger: (
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light, $ngx-opacity-disabled)
+  )
+) !default;
