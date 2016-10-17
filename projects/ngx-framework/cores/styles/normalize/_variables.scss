@@ -1,0 +1,32 @@
+@import '../typography/typography.scss';
+@import '../palette/palette.scss';
+
+$ngx-headings-margin-bottom: .5rem !default;
+$ngx-headings-font-family: inherit !default;
+$ngx-headings-font-weight: 500 !default;
+$ngx-headings-line-height: ngx-line-height(sm) !default;
+$ngx-headings-foreground-color: inherit !default;
+
+$ngx-hr-margin: 1rem 0 !default;
+$ngx-hr-border-width: 1px !default;
+$ngx-hr-border-color: ngx-color($ngx-color-black, dark-1);
+
+$ngx-mark-background-color: ngx-color($ngx-color-warning);
+
+$ngx-body-background-color: ngx-color($ngx-color-white, light) !default;
+$ngx-body-foreground-color: ngx-color($ngx-color-gray, dark) !default;
+
+$ngx-text-muted: ngx-color($ngx-color-gray, light) !default;
+
+$ngx-link-color: ngx-color($ngx-color-primary) !default;
+$ngx-link-decoration: none !default;
+$ngx-link-hover-color: ngx-color($ngx-color-primary, dark) !default;
+$ngx-link-hover-decoration: underline !default;
+
+$ngx-table-background-color: transparent !default;
+$ngx-table-cell-padding: .75rem !default;
+
+
+$ngx-abbr-border-color: ngx-color($ngx-color-gray, light) !default;
+
+$ngx-dt-font-weight: bold !default;
