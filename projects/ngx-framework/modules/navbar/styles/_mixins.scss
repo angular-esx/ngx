@@ -1,0 +1,36 @@
+﻿@import './_variables.scss';
+
+@mixin ngx-navbar-variant($variant-type, $component, $variant-configs: $ngx-navbar-variant-configs){
+  @if map-get($variant-configs, enable-#{$variant-type}) { 
+    $component-default: map-get($component, default);
+    $component-disabled: map-get($component, disabled); 
+
+    $foreground-color-default: map-get($component-default, foreground-color);
+
+    &.ngx-navbar-color-#{$variant-type} {
+      background-color: map-get($component-default, background-color);
+
+      /deep/ > .ngx-navbar-divider {
+        background-color: $foreground-color-default;
+      }
+
+      /deep/ > .ngx-navbar-brand {
+        cursor: pointer;
+
+        @include ngx-state(ngx-navbar-brand, 'self focus hover'){
+          color: $foreground-color-default;
+        }
+      }
+
+      /deep/ > .ngx-navbar-item {
+        color: map-get($component-disabled, foreground-color);
+        cursor: pointer;
+
+        @include ngx-state(ngx-navbar-item, 'focus hover active'){
+          color: $foreground-color-default;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

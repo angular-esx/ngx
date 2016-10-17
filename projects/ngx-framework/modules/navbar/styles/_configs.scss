@@ -1,0 +1,5 @@
+@import '../../../cores/styles/ngx.config.scss';
+
+$ngx-navbar-variant-configs: map-merge($ngx-variant-configs, (
+  enable-default: true
+)) !default;

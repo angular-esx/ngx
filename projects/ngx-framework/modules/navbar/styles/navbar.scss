@@ -1,0 +1,68 @@
+﻿@import './_mixins.scss';
+
+:host(.ngx-navbar) {
+  display: flex;
+  position: relative;
+  padding: $ngx-navbar-padding;
+
+  &.ngx-navbar-position-top,
+  &.ngx-navbar-position-bottom {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: $ngx-navbar-index;
+  }
+
+  &.ngx-navbar-position-top {
+    top: 0;
+  }
+
+  &.ngx-navbar-position-bottom {
+    bottom: 0;
+  }
+
+  /deep/ > .ngx-navbar-divider {
+    color: transparent;
+    width: 1px;
+    padding: $ngx-navbar-divider-padding;
+    margin: $ngx-navbar-divider-margin;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      padding: $ngx-navbar-divider-content-padding;
+    }
+  }
+
+  /deep/ > .ngx-navbar-brand {
+    padding: $ngx-navbar-brand-padding;
+    margin: $ngx-navbar-brand-margin;
+    font-size: $ngx-navbar-brand-font-size;
+    text-decoration: none;
+
+    > img {
+      display: block;
+    }
+  }
+
+  /deep/ > .ngx-navbar-item {
+    padding: $ngx-navbar-item-padding;
+    text-decoration: none;
+
+    + .ngx-navbar-item{
+      margin-left: 1rem;
+    }
+  }
+
+  @include ngx-navbar-variant(default, $ngx-navbar-default);
+
+  @include ngx-navbar-variant(primary, $ngx-navbar-primary);
+
+  @include ngx-navbar-variant(info, $ngx-navbar-info);
+
+  @include ngx-navbar-variant(success, $ngx-navbar-success);
+
+  @include ngx-navbar-variant(warning, $ngx-navbar-warning);
+
+  @include ngx-navbar-variant(danger, $ngx-navbar-danger);
+}

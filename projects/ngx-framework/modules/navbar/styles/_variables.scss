@@ -1,0 +1,88 @@
+﻿@import '../../../cores/styles/typography/typography.scss';
+@import '../../../cores/styles/palette/palette.scss';
+@import '../../../cores/styles/state/state.scss';
+@import '../../../cores/styles/z-index/z-index.scss';
+
+@import './_configs.scss';
+
+$ngx-navbar-padding: .5rem 1rem !default;
+$ngx-navbar-index: ngx-z-index(above-2) !default;
+
+$ngx-navbar-divider-padding: .425rem 0 .425rem 0 !default;
+$ngx-navbar-divider-margin: 0 1rem 0 1rem !default;
+$ngx-navbar-divider-content-padding: 0 10px;
+
+
+$ngx-navbar-brand-font-size: ngx-font-size(lg) !default;
+$ngx-navbar-brand-padding: .25rem 0 .25rem 0 !default;
+$ngx-navbar-brand-margin: 0 0 0 1rem !default;
+
+
+$ngx-navbar-item-padding: .425rem 0 .425rem 0 !default;
+
+
+$ngx-navbar-default: (
+  default: (
+    foreground-color: ngx-color($ngx-color-gray, dark),
+    background-color: ngx-color($ngx-color-gray, light-1),
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-gray, dark, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-gray, light-1, $ngx-opacity-disabled)
+  )
+) !default;
+
+$ngx-navbar-primary: (
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-primary)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-white, light, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-primary, light)
+  )
+) !default;
+
+$ngx-navbar-info: (
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-info),
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-white, light, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-info, light)
+  )
+) !default;
+
+$ngx-navbar-success: (
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-success)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-white, light, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-success, light)
+  )
+) !default;
+
+$ngx-navbar-warning: (
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-warning)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-white, light, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-warning, light)
+  )
+) !default;
+
+$ngx-navbar-danger: (
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-danger)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-white, light, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-danger, light)
+  )
+) !default;
