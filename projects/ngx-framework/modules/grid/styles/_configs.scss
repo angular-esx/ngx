@@ -1,0 +1,11 @@
+$ngx-grid-row-configs: (
+  enable-justify-content: true,
+  enable-align-content: true,
+  enable-align-items: true
+) !default;
+
+$ngx-grid-col-configs: (
+  enable-align-self: true,
+  enable-offset: true,
+  enable-order: true
+) !default;
