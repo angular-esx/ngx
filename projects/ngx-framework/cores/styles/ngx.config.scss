@@ -1,0 +1,12 @@
+$ngx-border-configs: (
+  enable-radius: true
+) !default;
+
+$ngx-variant-configs: (
+  enable-primary: true,
+  enable-secondary: true,
+  enable-info: true,
+  enable-success: true,
+  enable-warning: true,
+  enable-danger: true
+) !default;
