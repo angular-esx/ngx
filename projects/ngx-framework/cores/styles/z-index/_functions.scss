@@ -1,0 +1,5 @@
+@import './_variables.scss';
+
+@function ngx-z-index($index-name, $z-indexes: $ngx-z-indexes){
+  @return map-get($z-indexes, $index-name);
+}
