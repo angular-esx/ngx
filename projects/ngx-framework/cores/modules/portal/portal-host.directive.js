@@ -19,10 +19,10 @@ export var ngxPortalHostDirective = Directive({
     ComponentFactoryResolver,
     ViewContainerRef,
 
-    function (ComponentFactoryResolver, viewContainerRef) {
+    function (componentFactoryResolver, viewContainerRef) {
       ngxBasePortalHost.apply(this, arguments);
 
-      this.ComponentFactoryResolver = ComponentFactoryResolver;
+      this.componentFactoryResolver = componentFactoryResolver;
       this.viewContainerRef = viewContainerRef;
     }
   ],
@@ -39,22 +39,19 @@ export var ngxPortalHostDirective = Directive({
   attachComponentPortal: function (portal) {
     portal.attachedHost = this;
 
-    var _self = this,
-        _viewContainerRef = ngxUtils.isNull(portal.viewContainerRef) ? this.viewContainerRef : portal.viewContainerRef;
+    var _viewContainerRef = ngxUtils.isNull(portal.viewContainerRef) ? this.viewContainerRef : portal.viewContainerRef,
+        _componentFactory = this.componentFactoryResolver.resolveComponentFactory(portal.component);
 
-    return this.ComponentFactoryResolver.resolveComponentFactory(portal.component)
-    .then(function (componentFactory) {
-      var _componentRef = _viewContainerRef.createComponent
-      (
-        componentFactory,
-        _viewContainerRef.length,
-        portal.injector || _viewContainerRef.parentInjector
-      );
+    var _componentRef = _viewContainerRef.createComponent
+    (
+      _componentFactory,
+      _viewContainerRef.length,
+      portal.injector || _viewContainerRef.parentInjector
+    );
 
-      _self.dispose = function () { _componentRef.destroy(); };
+    this.dispose = function () { _componentRef.destroy(); };
 
-      return _componentRef;
-    });
+    return Promise.resolve(_componentRef);
   },
 
   attachTemplatePortal: function(portal) {
