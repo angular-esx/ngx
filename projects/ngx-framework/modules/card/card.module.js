@@ -1,34 +1,34 @@
 import { NgModule } from '@angular/core';
 
+import { ngxCardTitleDirective } from './card-title.directive';
+import { ngxCardSubtitleDirective } from './card-subtitle.directive';
+import { ngxCardTextDirective } from './card-text.directive';
+import { ngxCardImageDirective } from './card-image.directive';
+import { ngxCardContentDirective } from './card-content.directive';
+import { ngxCardActionsDirective } from './card-actions.directive';
 import { ngxCardHeaderComponent } from './card-header.component';
-import { ngxCardTitleComponent } from './card-title.component';
-import { ngxCardSubtitleComponent } from './card-subtitle.component';
-import { ngxCardTextComponent } from './card-text.component';
-import { ngxCardImageComponent } from './card-image.component';
-import { ngxCardContentComponent } from './card-content.component';
-import { ngxCardActionsComponent } from './card-actions.component';
 import { ngxCardComponent } from './card.component';
 
 
 export var ngxCardModule = NgModule({
   declarations: [ 
+    ngxCardTitleDirective,
+    ngxCardSubtitleDirective,
+    ngxCardTextDirective,
+    ngxCardImageDirective,
+    ngxCardContentDirective,
+    ngxCardActionsDirective,
     ngxCardHeaderComponent,
-    ngxCardTitleComponent,
-    ngxCardSubtitleComponent,
-    ngxCardTextComponent,
-    ngxCardImageComponent,
-    ngxCardContentComponent,
-    ngxCardActionsComponent,
     ngxCardComponent
   ],
   exports: [ 
+    ngxCardTitleDirective,
+    ngxCardSubtitleDirective,
+    ngxCardTextDirective,
+    ngxCardImageDirective,
+    ngxCardContentDirective,
+    ngxCardActionsDirective,
     ngxCardHeaderComponent,
-    ngxCardTitleComponent,
-    ngxCardSubtitleComponent,
-    ngxCardTextComponent,
-    ngxCardImageComponent,
-    ngxCardContentComponent,
-    ngxCardActionsComponent,
     ngxCardComponent
   ]
 })
