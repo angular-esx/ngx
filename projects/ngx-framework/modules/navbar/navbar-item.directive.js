@@ -3,7 +3,7 @@
 
 export var ngxNavbarItemDirective = Directive({
   selector: '[ngx-navbar-item]',
-  inputs: ['state:ngx-navbar-item-state', 'initCssClass:class'],
+  inputs: ['state:ngx-navbar-item-state'],
   host: {
     '[class.ngx-navbar-item]': 'true',
     '[class.ngx-navbar-item-state-active]': 'isActive',

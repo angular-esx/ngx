@@ -3,7 +3,6 @@
 
 export var ngxCardTextDirective = Directive({
   selector: 'ngx-card-text',
-  inputs: ['initCssClass:class'],
   host: {
     '[class.ngx-card-text]': 'true'
   }
