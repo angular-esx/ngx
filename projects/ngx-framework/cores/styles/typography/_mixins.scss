@@ -1,5 +1,3 @@
-@import './_functions.scss';
-
 @mixin ngx-clearfix() {
   &::after {
     content: "";

@@ -1,6 +1,4 @@
-﻿@import './_variables.scss';
-
-@mixin ngx-navbar-variant($variant-type, $component){
+﻿@mixin ngx-navbar-variant($variant-type, $component){
   $component-default: map-get($component, default);
   $component-disabled: map-get($component, disabled); 
 

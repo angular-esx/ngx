@@ -1,6 +1,4 @@
-﻿@import './_functions.scss';
-
-@mixin ngx-border-radius($radius: map-get($ngx-border-radius, base), $position: all) {
+﻿@mixin ngx-border-radius($radius: map-get($ngx-border-radius, base), $position: all) {
   @if $position == top {
     border-top-right-radius: $radius;
     border-top-left-radius: $radius;

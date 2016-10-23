@@ -1,10 +1,4 @@
-﻿@import '../../../cores/styles/typography/typography.scss';
-@import '../../../cores/styles/palette/palette.scss';
-@import '../../../cores/styles/state/state.scss';
-@import '../../../cores/styles/z-index/z-index.scss';
-
-
-$ngx-navbar-padding: .5rem 1rem !default;
+﻿$ngx-navbar-padding: .5rem 1rem !default;
 $ngx-navbar-index: ngx-z-index(above-2) !default;
 
 $ngx-navbar-divider-padding: .425rem 0 .425rem 0 !default;

@@ -1,6 +1,4 @@
-﻿@import '_variables.scss';
-
-@mixin ngx-card-justify-content(){
+﻿@mixin ngx-card-justify-content(){
   &[align="start"] {
     justify-content: flex-start;
   }
@@ -36,10 +34,6 @@
     color: map-get($component-default, foreground-color);
     background-color: map-get($component-default, background-color);
     border-color: map-get($component-default, border-color);
-
-    /deep/ hr {
-      border-top-color: map-get($component-default, foreground-color);
-    }
 
     /deep/ ngx-card-subtitle {
       color: map-get($subtitle-default, foreground-color);

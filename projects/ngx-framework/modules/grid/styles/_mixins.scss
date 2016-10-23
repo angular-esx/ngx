@@ -1,6 +1,4 @@
-﻿@import './_variables.scss';
-
-@mixin ngx-grid-max-widths($max-widths: $ngx-grid-max-widths){
+﻿@mixin ngx-grid-max-widths($max-widths: $ngx-grid-max-widths){
   &:not(.ngx-grid-type-fluid) {
     @each $breakpoint, $max-width in $max-widths {
       @include ngx-media-breakpoint-up($breakpoint) {

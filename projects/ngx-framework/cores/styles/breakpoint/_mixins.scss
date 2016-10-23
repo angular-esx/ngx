@@ -1,6 +1,4 @@
-﻿@import './_functions.scss';
-
-//Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
+﻿//Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
 @mixin ngx-media-breakpoint-up($breakpoint-name, $breakpoints: $ngx-breakpoints) {
   $min: ngx-breakpoint-min($breakpoint-name, $breakpoints);
 

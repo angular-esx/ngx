@@ -1,6 +1,4 @@
-﻿@import './_variables.scss';
-
-@function ngx-breakpoint($breakpoint-name, $breakpoints: $ngx-breakpoints) {
+﻿@function ngx-breakpoint($breakpoint-name, $breakpoints: $ngx-breakpoints) {
   @return map-get($breakpoints, $breakpoint-name);
 }
 
