@@ -9,7 +9,7 @@
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  @include ngx-border-radius($ngx-label-border-radius, all, $ngx-label-configs);
+  @include ngx-border-radius($ngx-label-border-radius);
 
   /deep/ a {
     text-decoration: none;
@@ -20,7 +20,10 @@
     display: none;
   }
 
-  @include ngx-label-type-pill();
+  &.ngx-label-type-pill {
+    padding: $ngx-label-pill-padding;
+    border-radius: $ngx-label-pill-border-radius;
+  }
   
 
   @include ngx-label-variant(default, $ngx-label-default);

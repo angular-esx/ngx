@@ -1,21 +1,11 @@
 ﻿@import './_variables.scss';
 
-@mixin ngx-label-type-pill($label-configs: $ngx-label-configs){
-  @if map-get($label-configs, enable-type-pill) { 
-    &.ngx-label-type-pill {
-      padding: $ngx-label-pill-padding;
-      border-radius: $ngx-label-pill-border-radius;
-    }
-  }
-}
 
-@mixin ngx-label-variant($variant-type, $component, $variant-configs: $ngx-label-variant-configs){
-  @if map-get($variant-configs, enable-#{$variant-type}) { 
-    $component-default: map-get($component, default);
+@mixin ngx-label-variant($variant-type, $component){
+  $component-default: map-get($component, default);
 
-    &.ngx-label-color-#{$variant-type} {
-      color: map-get($component-default, foreground-color);
-      background-color: map-get($component-default, background-color);
-    }
+  &.ngx-label-color-#{$variant-type} {
+    color: map-get($component-default, foreground-color);
+    background-color: map-get($component-default, background-color);
   }
 }

@@ -6,7 +6,7 @@
   padding: $ngx-card-padding;
   border: $ngx-card-boder;
 
-  @include ngx-border-radius($ngx-card-boder-radius, all, $ngx-card-configs);
+  @include ngx-border-radius($ngx-card-boder-radius);
 
   /deep/ ngx-card-title {
     display: block;
@@ -24,7 +24,7 @@
     > ngx-card-image {
       padding-right: 10px;
 
-      @include ngx-card-align-self($ngx-card-image-configs);
+      @include ngx-card-align-self();
     }
 
     > .ngx-card-header-content {
@@ -35,7 +35,7 @@
     > ngx-card-actions {
       padding-left: 10px;
 
-      @include ngx-card-align-self($ngx-card-actions-configs);
+      @include ngx-card-align-self();
     }
   }
 
@@ -51,14 +51,14 @@
     &:first-child {
       margin-top: $ngx-card-image-first-child-margin-top;
       > img {
-        @include ngx-border-radius($ngx-card-boder-radius, top, $ngx-card-configs);
+        @include ngx-border-radius($ngx-card-boder-radius, top);
       }
     }
 
     &:last-child {
        margin-bottom: $ngx-card-image-last-child-margin-bottom;
       > img {
-        @include ngx-border-radius($ngx-card-boder-radius, bottom, $ngx-card-configs);
+        @include ngx-border-radius($ngx-card-boder-radius, bottom);
       }
     }
   }
@@ -79,7 +79,7 @@
       margin: $ngx-card-actions-item-margin;
     }
 
-    @include ngx-card-justify-content($ngx-card-actions-configs);
+    @include ngx-card-justify-content();
   }
 
   @include ngx-card-variant(primary, $ngx-card-primary, $ngx-card-subtitle-primary);

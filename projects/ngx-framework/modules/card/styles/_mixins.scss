@@ -1,54 +1,48 @@
 ﻿@import '_variables.scss';
 
-@mixin ngx-card-justify-content($configs){
-  @if map-get($configs, enable-justify-content) { 
-    &[align="start"] {
-      justify-content: flex-start;
-    }
+@mixin ngx-card-justify-content(){
+  &[align="start"] {
+    justify-content: flex-start;
+  }
 
-    &[align="center"] {
-      justify-content: space-around;
-    }
+  &[align="center"] {
+    justify-content: space-around;
+  }
 
-    &[align="end"] {
-      justify-content: flex-end;
-    }
+  &[align="end"] {
+    justify-content: flex-end;
   }
 }
 
-@mixin ngx-card-align-self($configs){
-  @if map-get($configs, enable-align-self) { 
-    &[align="start"] {
-      align-self: flex-start;
-    }
+@mixin ngx-card-align-self(){
+  &[align="start"] {
+    align-self: flex-start;
+  }
 
-    &[align="center"] {
-      align-self: center;
-    }
+  &[align="center"] {
+    align-self: center;
+  }
 
-    &[align="end"] {
-      align-self: flex-end;
-    }
+  &[align="end"] {
+    align-self: flex-end;
   }
 }
 
-@mixin ngx-card-variant($variant-type, $component, $subtitle, $variant-configs: $ngx-card-variant-configs){
-  @if map-get($variant-configs, enable-#{$variant-type}) { 
-    $component-default: map-get($component, default);
-    $subtitle-default: map-get($subtitle, default);
+@mixin ngx-card-variant($variant-type, $component, $subtitle){
+  $component-default: map-get($component, default);
+  $subtitle-default: map-get($subtitle, default);
 
-    &.ngx-card-color-#{$variant-type} {
-      color: map-get($component-default, foreground-color);
-      background-color: map-get($component-default, background-color);
-      border-color: map-get($component-default, border-color);
+  &.ngx-card-color-#{$variant-type} {
+    color: map-get($component-default, foreground-color);
+    background-color: map-get($component-default, background-color);
+    border-color: map-get($component-default, border-color);
 
-      /deep/ hr {
-        border-top-color: map-get($component-default, foreground-color);
-      }
+    /deep/ hr {
+      border-top-color: map-get($component-default, foreground-color);
+    }
 
-      /deep/ ngx-card-subtitle {
-        color: map-get($subtitle-default, foreground-color);
-      }
+    /deep/ ngx-card-subtitle {
+      color: map-get($subtitle-default, foreground-color);
     }
   }
 }
