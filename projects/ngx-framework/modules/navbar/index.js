@@ -1,6 +1,24 @@
-﻿export { ngxNavbarModule } from './navbar.module';
+﻿export { 
+  ngxNavbarModuleMetadata,
+  ngxNavbarModule 
+} from './navbar.module';
 
-export { ngxNavbarBrandDirective } from './navbar-brand.directive';
-export { ngxNavbarDividerDirective } from './navbar-divider.directive';
-export { ngxNavbarItemDirective } from './navbar-item.directive';
-export { ngxNavbarComponent } from './navbar.component';
+export { 
+  ngxNavbarBrandDirectiveMetadata,
+  ngxNavbarBrandDirective 
+} from './navbar-brand.directive';
+
+export { 
+  ngxNavbarDividerDirectiveMetadata,
+  ngxNavbarDividerDirective 
+} from './navbar-divider.directive';
+
+export { 
+  ngxNavbarItemDirectiveMetadata,
+  ngxNavbarItemDirective 
+} from './navbar-item.directive';
+
+export { 
+  ngxNavbarComponentMetadata,
+  ngxNavbarComponent 
+} from './navbar.component';

@@ -1,4 +1,5 @@
 ﻿import {
+  Class,
   Component,
   ElementRef,
   Renderer,
@@ -8,12 +9,18 @@
 import { ngxBaseComponent } from  '../../cores';
 
 
-export var ngxCardHeaderComponent = Component({
-  selector: 'ngx-card-header',
-  templateUrl: './templates/card-header.html',
-  inputs: ['initCssClass:class'],
-  changeDetection: ChangeDetectionStrategy.OnPush
-})
+export var ngxCardHeaderComponentMetadata = Class({
+  constructor: function(){
+    Object.assign(this, {
+      selector: 'ngx-card-header',
+      templateUrl: './templates/card-header.html',
+      inputs: ['initCssClass:class'],
+      changeDetection: ChangeDetectionStrategy.OnPush
+    });
+  }
+});
+
+export var ngxCardHeaderComponent = Component(new ngxCardHeaderComponentMetadata())
 .Class({
   extends: ngxBaseComponent,
 

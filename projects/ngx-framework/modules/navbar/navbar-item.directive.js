@@ -1,14 +1,23 @@
-﻿import { Directive } from '@angular/core';
+﻿import { 
+  Class,
+  Directive 
+} from '@angular/core';
 
 
-export var ngxNavbarItemDirective = Directive({
-  selector: '[ngx-navbar-item]',
-  inputs: ['state:ngx-navbar-item-state'],
-  host: {
-    '[class.ngx-navbar-item]': 'true',
-    '[class.ngx-navbar-item-state-active]': 'isActive',
+export var ngxNavbarItemDirectiveMetadata = Class({
+  constructor: function(){
+    Object.assign(this, {
+      selector: '[ngx-navbar-item]',
+      inputs: ['state:ngx-navbar-item-state'],
+      host: {
+        '[class.ngx-navbar-item]': 'true',
+        '[class.ngx-navbar-item-state-active]': 'isActive',
+      }
+    });
   }
-})
+});
+
+export var ngxNavbarItemDirective = Directive(new ngxNavbarItemDirectiveMetadata())
 .Class({
   constructor: function(){},
 

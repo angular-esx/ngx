@@ -1,12 +1,21 @@
-﻿import { Directive } from '@angular/core';
+﻿import { 
+  Class,
+  Directive 
+} from '@angular/core';
 
 
-export var ngxCardTitleDirective = Directive({
-  selector: 'ngx-card-title',
-  host: {
-    '[class.ngx-card-title]': 'true'
+export var ngxCardTitleDirectiveMetadata = Class({
+  constructor: function(){
+    Object.assign(this, {
+      selector: 'ngx-card-title',
+      host: {
+        '[class.ngx-card-title]': 'true'
+      }
+    });
   }
-})
+});
+
+export var ngxCardTitleDirective = Directive(new ngxCardTitleDirectiveMetadata())
 .Class({
   constructor: function(){}
 });

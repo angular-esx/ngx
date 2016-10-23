@@ -1,4 +1,5 @@
 ﻿import { 
+  Class,
   Directive,
   ElementRef,
   Renderer
@@ -8,10 +9,16 @@ from '@angular/core';
 import { ngxBaseDirective, ngxUtils } from  '../../cores';
 
 
-export var ngxGridRowDirective = Directive({
-  selector: 'ngx-grid-row',
-  inputs: [ 'initCssClass:class' ]
-})
+export var ngxGridRowDirectiveMetadata = Class({
+  constructor: function(){
+    Object.assign(this, {
+      selector: 'ngx-grid-row',
+      inputs: [ 'initCssClass:class' ]
+    });
+  }
+});
+
+export var ngxGridRowDirective = Directive(new ngxGridRowDirectiveMetadata())
 .Class({
   extends: ngxBaseDirective,
 

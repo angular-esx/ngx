@@ -1,3 +1,9 @@
-export { ngxLabelModule } from './label.module';
+export {
+  ngxLabelModuleMetadata, 
+  ngxLabelModule 
+} from './label.module';
 
-export { ngxLabelComponent } from './label.component';
+export { 
+  ngxLabelComponentMetadata,
+  ngxLabelComponent 
+} from './label.component';

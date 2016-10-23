@@ -1,4 +1,5 @@
 import { 
+  Class,
   Component,
   ElementRef,
   Renderer,
@@ -9,13 +10,19 @@ from '@angular/core';
 import { ngxBaseComponent, ngxUtils } from '../../cores';
 
 
-export var ngxLabelComponent = Component({
-  selector: 'ngx-label',
-  templateUrl: './templates/label.html',
-  styleUrls: ['./styles/label.scss'],
-  inputs: ['color', 'type', 'initCssClass:class'],
-  changeDetection: ChangeDetectionStrategy.OnPush
-})
+export var ngxLabelComponentMetadata = Class({
+  constructor: function(){
+    Object.assign(this, {
+      selector: 'ngx-label',
+      templateUrl: './templates/label.html',
+      styleUrls: ['./styles/label.scss'],
+      inputs: ['color', 'type', 'initCssClass:class'],
+      changeDetection: ChangeDetectionStrategy.OnPush
+    });
+  }
+});
+
+export var ngxLabelComponent = Component(new ngxLabelComponentMetadata())
 .Class({
   extends: ngxBaseComponent,
 

@@ -1,12 +1,21 @@
-﻿import { Directive } from '@angular/core';
+﻿import { 
+  Class,
+  Directive 
+} from '@angular/core';
 
 
-export var ngxCardImageDirective = Directive({
-  selector: 'ngx-card-image',
-  host: {
-    '[class.ngx-card-image]': 'true'
+export var ngxCardImageDirectiveMetadata = Class({
+  constructor: function(){
+    Object.assign(this, {
+      selector: 'ngx-card-image',
+      host: {
+        '[class.ngx-card-image]': 'true'
+      }
+    });
   }
-})
+});
+
+export var ngxCardImageDirective = Directive(new ngxCardImageDirectiveMetadata())
 .Class({
   constructor: function(){}
 });

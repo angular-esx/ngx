@@ -1,4 +1,5 @@
 ﻿import { 
+  Class,
   Directive,
   ElementRef,
   Renderer,
@@ -11,15 +12,21 @@ import { ngxBaseDirective, ngxUtils } from  '../../cores';
 var _STYLE_PROPERTIES;
 
 
-export var ngxGridColDirective = Directive({
-  selector: 'ngx-grid-col',
-  inputs: [
-    'size', 
-    'offset', 
-    'order',
-    'initCssClass:class'
-  ]
-})
+export var ngxGridColDirectiveMetadata = Class({
+  constructor: function(){
+    Object.assign(this, {
+      selector: 'ngx-grid-col',
+      inputs: [
+        'size', 
+        'offset', 
+        'order',
+        'initCssClass:class'
+      ]
+    });
+  }
+});
+
+export var ngxGridColDirective = Directive(new ngxGridColDirectiveMetadata())
 .Class({
   extends: ngxBaseDirective,
 

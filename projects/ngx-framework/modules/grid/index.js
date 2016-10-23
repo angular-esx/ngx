@@ -1,5 +1,19 @@
-﻿export { ngxGridModule } from './grid.module';
+﻿export { 
+  ngxGridModuleMetadata,
+  ngxGridModule 
+} from './grid.module';
 
-export { ngxGridRowDirective } from './grid-row.directive';
-export { ngxGridColumnDirective } from './grid-col.directive';
-export { ngxGridComponent } from './grid.component';
+export { 
+  ngxGridRowDirectiveMetadata,
+  ngxGridRowDirective 
+} from './grid-row.directive';
+
+export { 
+  ngxGridColDirectiveMetadata,
+  ngxGridColDirective 
+} from './grid-col.directive';
+
+export { 
+  ngxGridComponentMetadata,
+  ngxGridComponent 
+} from './grid.component';

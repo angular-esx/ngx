@@ -1,3 +1,9 @@
-export { ngxJumbotronModule } from './jumbotron.module';
+export {
+  ngxJumbotronModuleMetadata, 
+  ngxJumbotronModule
+} from './jumbotron.module';
 
-export { ngxJumbotronComponent } from './jumbotron.component';
+export { 
+  ngxJumbotronComponentMetadata,
+  ngxJumbotronComponent 
+} from './jumbotron.component';

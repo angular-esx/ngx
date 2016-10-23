@@ -1,4 +1,5 @@
 ﻿import { 
+  Class,
   Component,
   ElementRef,
   Renderer,
@@ -9,13 +10,19 @@ from '@angular/core';
 import { ngxBaseComponent, ngxUtils } from '../../cores';
 
 
-export var ngxNavbarComponent = Component({
-  selector: 'ngx-navbar',
-  templateUrl: './templates/navbar.html',
-  styleUrls: ['./styles/navbar.scss'],
-  inputs: ['color', 'position', 'initCssClass:class'],
-  changeDetection: ChangeDetectionStrategy.OnPush
-})
+export var ngxNavbarComponentMetadata = Class({
+  constructor: function(){
+    Object.assign(this, {
+      selector: 'ngx-navbar',
+      templateUrl: './templates/navbar.html',
+      styleUrls: ['./styles/navbar.scss'],
+      inputs: ['color', 'position', 'initCssClass:class'],
+      changeDetection: ChangeDetectionStrategy.OnPush
+    });
+  }
+});
+
+export var ngxNavbarComponent = Component(new ngxNavbarComponentMetadata())
 .Class({
   extends: ngxBaseComponent,
 

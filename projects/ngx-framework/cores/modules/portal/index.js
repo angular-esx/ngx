@@ -1,5 +1,15 @@
-export { ngxPortalModule } from './portal.module';
+export { 
+  ngxPortalModuleMetadata,
+  ngxPortalModule 
+} from './portal.module';
 
-export { ngxPortalHostDirective } from './portal-host.directive';
-export { ngxTemplatePortalDirective } from './template-portal.directive';
+export { 
+  ngxPortalHostDirectiveMetadata,
+  ngxPortalHostDirective 
+} from './portal-host.directive';
+
+export { 
+  ngxTemplatePortalDirectiveMetadata,
+  ngxTemplatePortalDirective 
+} from './template-portal.directive';
 

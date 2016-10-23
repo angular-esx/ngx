@@ -1,4 +1,5 @@
 import {
+  Class,
   Directive,
   ComponentFactoryResolver,
   ViewContainerRef
@@ -8,10 +9,16 @@ import { ngxUtils } from '../../utils';
 import { ngxBasePortalHost } from '../../models';
 
 
-export var ngxPortalHostDirective = Directive({
-  selector: '[ngx-portal-host]',
-  inputs: ['portal: ngx-portal-host']
-})
+export var ngxPortalHostDirectiveMetadata = Class({
+  constructor: function(){
+    Object.assign(this, {
+      selector: '[ngx-portal-host]',
+      inputs: ['portal: ngx-portal-host']
+    });
+  }
+});
+
+export var ngxPortalHostDirective = Directive(new ngxPortalHostDirectiveMetadata())
 .Class({
   extends: ngxBasePortalHost,
 

@@ -1,4 +1,5 @@
 ﻿import { 
+  Class,
   Component,
   ElementRef,
   Renderer,
@@ -9,13 +10,19 @@ from '@angular/core';
 import { ngxBaseComponent } from '../../cores';
 
 
-export var ngxGridComponent = Component({
-  selector: 'ngx-grid',
-  templateUrl: './templates/grid.html',
-  styleUrls: ['./styles/grid.scss'],
-  inputs: ['type', 'initCssClass:class'],
-  changeDetection: ChangeDetectionStrategy.OnPush
-})
+export var ngxGridComponentMetadata = Class({
+  constructor: function(){
+    Object.assign(this, {
+      selector: 'ngx-grid',
+      templateUrl: './templates/grid.html',
+      styleUrls: ['./styles/grid.scss'],
+      inputs: ['type', 'initCssClass:class'],
+      changeDetection: ChangeDetectionStrategy.OnPush
+    });
+  }
+});
+
+export var ngxGridComponent = Component(new ngxGridComponentMetadata())
 .Class({
   extends: ngxBaseComponent,
 

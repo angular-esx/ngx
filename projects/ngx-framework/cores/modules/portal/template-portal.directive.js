@@ -1,4 +1,5 @@
 import {
+  Class,
   Directive,
   TemplateRef,
   ViewContainerRef
@@ -7,9 +8,15 @@ import {
 import { ngxTemplatePortal } from '../../models';
 
 
-export var ngxTemplatePortalDirective = Directive({
-  selector: '[ngx-portal]'
-})
+export var ngxTemplatePortalDirectiveMetadata = Class({
+  constructor: function(){
+    Object.assign(this, {
+      selector: '[ngx-portal]'
+    });
+  }
+});
+
+export var ngxTemplatePortalDirective = Directive(new ngxTemplatePortalDirectiveMetadata())
 .Class({
   extends: ngxTemplatePortal,
 

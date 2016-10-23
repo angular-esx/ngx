@@ -1,4 +1,5 @@
 ﻿import {
+  Class,
   Component,
   ElementRef,
   Renderer,
@@ -8,13 +9,19 @@
 import { ngxBaseComponent, ngxUtils } from  '../../cores';
 
 
-export var ngxCardComponent = Component({
-  selector: 'ngx-card',
-  templateUrl: './templates/card.html',
-  styleUrls: ['./styles/card.scss'],
-  inputs: ['color', 'initCssClass:class'],
-  changeDetection: ChangeDetectionStrategy.OnPush
-})
+export var ngxCardComponentMetadata = Class({
+  constructor: function(){
+    Object.assign(this, {
+      selector: 'ngx-card',
+      templateUrl: './templates/card.html',
+      styleUrls: ['./styles/card.scss'],
+      inputs: ['color', 'initCssClass:class'],
+      changeDetection: ChangeDetectionStrategy.OnPush
+    });
+  }
+});
+
+export var ngxCardComponent = Component(new ngxCardComponentMetadata())
 .Class({
   extends: ngxBaseComponent,
 
