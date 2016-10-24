@@ -5,7 +5,7 @@
 
 
 export var ngxCardTextDirectiveMetadata = Class({
-  constructor: function(){
+  constructor: function ngxCardTextDirectiveMetadata(){
     Object.assign(this, {
       selector: 'ngx-card-text',
       host: {
@@ -17,5 +17,5 @@ export var ngxCardTextDirectiveMetadata = Class({
 
 export var ngxCardTextDirective = Directive(new ngxCardTextDirectiveMetadata())
 .Class({
-  constructor: function(){}
+  constructor: function ngxCardTextDirective(){}
 });

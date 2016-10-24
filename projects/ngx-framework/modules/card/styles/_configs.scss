@@ -1,0 +1,14 @@
+$ngx-card-configs: (
+  justify-content: true,
+  align-self: true,
+  title: true,
+  subtitle: true,
+  header: true,
+  header-image: true,
+  header-content: true,
+  header-actions: true,
+  image: true,
+  content: true,
+  actions: true,
+  variants: (primary, secondary, info, success, warning, danger)
+);

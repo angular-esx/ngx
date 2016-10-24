@@ -10,7 +10,7 @@ import { ngxBaseComponent } from  '../../cores';
 
 
 export var ngxCardHeaderComponentMetadata = Class({
-  constructor: function(){
+  constructor: function ngxCardHeaderComponentMetadata(){
     Object.assign(this, {
       selector: 'ngx-card-header',
       templateUrl: './templates/card-header.html',
@@ -28,7 +28,7 @@ export var ngxCardHeaderComponent = Component(new ngxCardHeaderComponentMetadata
     ElementRef,
     Renderer,
 
-    function (elementRef, renderer) {
+    function ngxCardHeaderComponent(elementRef, renderer) {
       ngxBaseComponent.apply(this, arguments);
     }
   ],

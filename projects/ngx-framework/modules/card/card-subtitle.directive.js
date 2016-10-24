@@ -5,7 +5,7 @@
 
 
 export var ngxCardSubtitleDirectiveMetadata = Class({
-  constructor: function(){
+  constructor: function ngxCardSubtitleDirectiveMetadata(){
     Object.assign(this, {
       selector: 'ngx-card-subtitle',
       host: {
@@ -17,5 +17,5 @@ export var ngxCardSubtitleDirectiveMetadata = Class({
 
 export var ngxCardSubtitleDirective = Directive(new ngxCardSubtitleDirectiveMetadata())
 .Class({
-  constructor: function(){}
+  constructor: function ngxCardSubtitleDirective(){}
 });

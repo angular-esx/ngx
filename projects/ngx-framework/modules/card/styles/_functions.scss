@@ -1,0 +1,49 @@
+@function ngx-card-config($config-name){
+  @return map-get($ngx-card-configs, $config-name);
+}
+
+@function ngx-card-component($name){
+  @if $name == primary {
+    @return $ngx-card-primary;
+  }
+  @else if $name == secondary {
+    @return $ngx-card-secondary;
+  }
+  @else if $name == info {
+    @return $ngx-card-info;
+  }
+  @else if $name == success {
+    @return $ngx-card-success;
+  }
+  @else if $name == warning {
+    @return $ngx-card-warning;
+  } 
+  @else if $name == danger {
+    @return $ngx-card-danger;
+  }
+
+  @return null;
+}
+
+@function ngx-card-subtitle-component($name){
+  @if $name == primary {
+    @return $ngx-card-subtitle-primary;
+  }
+  @else if $name == secondary {
+    @return $ngx-card-subtitle-secondary;
+  }
+  @else if $name == info {
+    @return $ngx-card-subtitle-info;
+  }
+  @else if $name == success {
+    @return $ngx-card-subtitle-success;
+  }
+  @else if $name == warning {
+    @return $ngx-card-subtitle-warning;
+  } 
+  @else if $name == danger {
+    @return $ngx-card-subtitle-danger;
+  }
+
+  @return null;
+}

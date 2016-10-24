@@ -5,7 +5,7 @@
 
 
 export var ngxCardImageDirectiveMetadata = Class({
-  constructor: function(){
+  constructor: function ngxCardImageDirectiveMetadata(){
     Object.assign(this, {
       selector: 'ngx-card-image',
       host: {
@@ -17,5 +17,5 @@ export var ngxCardImageDirectiveMetadata = Class({
 
 export var ngxCardImageDirective = Directive(new ngxCardImageDirectiveMetadata())
 .Class({
-  constructor: function(){}
+  constructor: function ngxCardImageDirective(){}
 });

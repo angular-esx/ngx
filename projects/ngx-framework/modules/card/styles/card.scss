@@ -8,89 +8,99 @@
 
   @include ngx-border-radius($ngx-card-boder-radius);
 
-  /deep/ ngx-card-title {
-    display: block;
-    margin: $ngx-card-title-margin;
-  }
-
-  /deep/ ngx-card-subtitle {
-    display: block;
-    margin: $ngx-card-subtitle-margin;
-  }
-
-  /deep/ > .ngx-card-header {
-    display: flex;
-
-    > ngx-card-image {
-      padding-right: 10px;
-
-      @include ngx-card-align-self();
+  @if ngx-card-config(title){
+    /deep/ ngx-card-title {
+      display: block;
+      margin: $ngx-card-title-margin;
     }
-
-    > .ngx-card-header-content {
-      min-width: 1px;
-      flex: 1;
-    }
-
-    > ngx-card-actions {
-      padding-left: 10px;
-
-      @include ngx-card-align-self();
+  }
+  
+  @if ngx-card-config(subtitle){
+    /deep/ ngx-card-subtitle {
+      display: block;
+      margin: $ngx-card-subtitle-margin;
     }
   }
 
-  /deep/ > ngx-card-image {
-    display: block;
-    width: $ngx-card-image-width;
-    margin: $ngx-card-image-margin;
+  @if ngx-card-config(header){
+    /deep/ > .ngx-card-header {
+      display: flex;
 
-    > img {
-      width: 100%;
-    }
+      @if ngx-card-config(header-image){
+        > ngx-card-image {
+          padding-right: 10px;
 
-    &:first-child {
-      margin-top: $ngx-card-image-first-child-margin-top;
-      > img {
-        @include ngx-border-radius($ngx-card-boder-radius, top);
+          @include ngx-card-align-self();
+        }
       }
-    }
 
-    &:last-child {
-       margin-bottom: $ngx-card-image-last-child-margin-bottom;
-      > img {
-        @include ngx-border-radius($ngx-card-boder-radius, bottom);
+      @if ngx-card-config(header-content){
+        > .ngx-card-header-content {
+          min-width: 1px;
+          flex: 1;
+        }
+      }
+
+      @if ngx-card-config(header-actions){
+        > ngx-card-actions {
+          padding-left: 10px;
+
+          @include ngx-card-align-self();
+        } 
       }
     }
   }
 
-  /deep/ > ngx-card-content {
-    display: block;
+  @if ngx-card-config(image){
+    /deep/ > ngx-card-image {
+      display: block;
+      width: $ngx-card-image-width;
+      margin: $ngx-card-image-margin;
 
-    > *:last-child {
-      margin-bottom: 0;
+      > img {
+        width: 100%;
+      }
+
+      &:first-child {
+        margin-top: $ngx-card-image-first-child-margin-top;
+        > img {
+          @include ngx-border-radius($ngx-card-boder-radius, top);
+        }
+      }
+
+      &:last-child {
+        margin-bottom: $ngx-card-image-last-child-margin-bottom;
+        > img {
+          @include ngx-border-radius($ngx-card-boder-radius, bottom);
+        }
+      }
+    }
+  }
+  
+  @if ngx-card-config(content){
+    /deep/ > ngx-card-content {
+      display: block;
+
+      > *:last-child {
+        margin-bottom: 0;
+      }
+    }
+  } 
+  
+  @if ngx-card-config(actions){
+    /deep/ > ngx-card-actions {
+      display: flex;
+      margin: $ngx-card-actions-margin;
+
+      > *:not(:first-child) {
+        margin: $ngx-card-actions-item-margin;
+      }
+
+      @include ngx-card-justify-content();
     }
   }
 
-  /deep/ > ngx-card-actions {
-    display: flex;
-    margin: $ngx-card-actions-margin;
-
-    > *:not(:first-child) {
-      margin: $ngx-card-actions-item-margin;
-    }
-
-    @include ngx-card-justify-content();
+  @each $variant in ngx-card-config(variants) {
+    @include ngx-card-variant($variant);
   }
-
-  @include ngx-card-variant(primary, $ngx-card-primary, $ngx-card-subtitle-primary);
-
-  @include ngx-card-variant(secondary, $ngx-card-secondary, $ngx-card-subtitle-secondary);
-
-  @include ngx-card-variant(info, $ngx-card-info, $ngx-card-subtitle-info);
-
-  @include ngx-card-variant(success, $ngx-card-success, $ngx-card-subtitle-success);
-
-  @include ngx-card-variant(warning, $ngx-card-warning, $ngx-card-subtitle-warning);
-
-  @include ngx-card-variant(danger, $ngx-card-danger, $ngx-card-subtitle-danger);
 }

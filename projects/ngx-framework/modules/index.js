@@ -15,6 +15,7 @@ export {
   ngxCardContentDirective,
   ngxCardActionsDirectiveMetadata,
   ngxCardActionsDirective,
+  ngxCardComponentMetadata,
   ngxCardComponent
 } from './card';
 

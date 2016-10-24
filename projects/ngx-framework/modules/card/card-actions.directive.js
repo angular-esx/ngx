@@ -5,7 +5,7 @@
 
 
 export var ngxCardActionsDirectiveMetadata = Class({
-  constructor: function(){
+  constructor: function ngxCardActionsDirectiveMetadata(){
     Object.assign(this, {
       selector: 'ngx-card-actions',
       host: {
@@ -17,5 +17,5 @@ export var ngxCardActionsDirectiveMetadata = Class({
 
 export var ngxCardActionsDirective = Directive(new ngxCardActionsDirectiveMetadata())
 .Class({
-  constructor: function(){}
+  constructor: function ngxCardActionsDirective(){}
 });

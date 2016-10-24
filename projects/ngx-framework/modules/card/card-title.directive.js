@@ -5,7 +5,7 @@
 
 
 export var ngxCardTitleDirectiveMetadata = Class({
-  constructor: function(){
+  constructor: function ngxCardTitleDirectiveMetadata(){
     Object.assign(this, {
       selector: 'ngx-card-title',
       host: {
@@ -17,5 +17,5 @@ export var ngxCardTitleDirectiveMetadata = Class({
 
 export var ngxCardTitleDirective = Directive(new ngxCardTitleDirectiveMetadata())
 .Class({
-  constructor: function(){}
+  constructor: function ngxCardTitleDirective(){}
 });

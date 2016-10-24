@@ -1,39 +1,43 @@
 ﻿@mixin ngx-card-justify-content(){
-  &[align="start"] {
-    justify-content: flex-start;
-  }
+  @if ngx-card-config(justify-content) {
+    &[align="start"] {
+      justify-content: flex-start;
+    }
 
-  &[align="center"] {
-    justify-content: space-around;
-  }
+    &[align="center"] {
+      justify-content: space-around;
+    }
 
-  &[align="end"] {
-    justify-content: flex-end;
+    &[align="end"] {
+      justify-content: flex-end;
+    }
   }
 }
 
 @mixin ngx-card-align-self(){
-  &[align="start"] {
-    align-self: flex-start;
-  }
+  @if ngx-card-config(align-self) {
+    &[align="start"] {
+      align-self: flex-start;
+    }
 
-  &[align="center"] {
-    align-self: center;
-  }
+    &[align="center"] {
+      align-self: center;
+    }
 
-  &[align="end"] {
-    align-self: flex-end;
+    &[align="end"] {
+      align-self: flex-end;
+    }
   }
 }
 
-@mixin ngx-card-variant($variant-type, $component, $subtitle){
-  $component-default: map-get($component, default);
-  $subtitle-default: map-get($subtitle, default);
+@mixin ngx-card-variant($name){
+  $card-default: map-get(ngx-card-component($name), default);
+  $subtitle-default: map-get(ngx-card-subtitle-component($name), default);
 
-  &.ngx-card-color-#{$variant-type} {
-    color: map-get($component-default, foreground-color);
-    background-color: map-get($component-default, background-color);
-    border-color: map-get($component-default, border-color);
+  &.ngx-card-color-#{$name} {
+    color: map-get($card-default, foreground-color);
+    background-color: map-get($card-default, background-color);
+    border-color: map-get($card-default, border-color);
 
     /deep/ ngx-card-subtitle {
       color: map-get($subtitle-default, foreground-color);
