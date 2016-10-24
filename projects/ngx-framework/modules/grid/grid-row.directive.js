@@ -10,7 +10,7 @@ import { ngxBaseDirective, ngxUtils } from  '../../cores';
 
 
 export var ngxGridRowDirectiveMetadata = Class({
-  constructor: function(){
+  constructor: function ngxGridRowDirectiveMetadata(){
     Object.assign(this, {
       selector: 'ngx-grid-row',
       inputs: [ 'initCssClass:class' ]
@@ -26,7 +26,7 @@ export var ngxGridRowDirective = Directive(new ngxGridRowDirectiveMetadata())
     ElementRef,
     Renderer,
 
-    function (elementRef, renderer) {
+    function ngxGridRowDirective(elementRef, renderer) {
       ngxBaseDirective.apply(this, arguments);
     }
   ],

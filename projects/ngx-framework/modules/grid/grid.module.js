@@ -15,7 +15,7 @@ var _DIRECTIVES = [
 
 
 export var ngxGridModuleMetadata = Class({
-  constructor: function(){
+  constructor: function ngxGridModuleMetadata(){
     Object.assign(this, {
       declarations: [].concat(_DIRECTIVES),
       exports: [].concat(_DIRECTIVES)
@@ -25,5 +25,5 @@ export var ngxGridModuleMetadata = Class({
 
 export var ngxGridModule = NgModule(new ngxGridModuleMetadata())
 .Class({
-  constructor: function(){}
+  constructor: function ngxGridModule(){}
 });

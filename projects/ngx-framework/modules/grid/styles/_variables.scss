@@ -1,4 +1,4 @@
-﻿$ngx-grid-max-widths: (
+﻿$ngx-grid-max-width-in-breakpoints: (
   sm: 576px,
   md: 720px,
   lg: 940px,
@@ -6,5 +6,32 @@
 ) !default;
 
 $ngx-grid-columns: 12 !default;
+
+$ngx-grid-column-positions: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+
+$ngx-grid-size-in-breakpoints: (
+  xs: $ngx-grid-column-positions,
+  sm: $ngx-grid-column-positions,
+  md: $ngx-grid-column-positions,
+  lg: $ngx-grid-column-positions,
+  xl: $ngx-grid-column-positions
+) !default;
+
+$ngx-grid-offset-in-breakpoints: (
+  xs: $ngx-grid-column-positions,
+  sm: $ngx-grid-column-positions,
+  md: $ngx-grid-column-positions,
+  lg: $ngx-grid-column-positions,
+  xl: $ngx-grid-column-positions
+) !default;
+
+$ngx-grid-order-in-breakpoints: (
+  xs: $ngx-grid-column-positions,
+  sm: $ngx-grid-column-positions,
+  md: $ngx-grid-column-positions,
+  lg: $ngx-grid-column-positions,
+  xl: $ngx-grid-column-positions
+) !default;
+
 
 $ngx-grid-gutter-width: 1.875rem !default;

@@ -8,7 +8,15 @@
   padding-right: ($ngx-grid-gutter-width / 2);
   box-sizing: border-box;
 
-  @include ngx-grid-max-widths();
+  @if ngx-grid-config(max-widths) {
+    &:not(.ngx-grid-type-fluid) {
+      @each $breakpoint, $max-width in $ngx-grid-max-width-in-breakpoints {
+        @include ngx-media-breakpoint-up($breakpoint) {
+          max-width: $max-width;
+        }
+      }
+    }
+  }
 
   /deep/ .ngx-grid-row {
     display: flex;
@@ -17,12 +25,56 @@
     margin-right: ($ngx-grid-gutter-width / -2);
     box-sizing: border-box;
 
-    @include ngx-grid-rows();
+    @if ngx-grid-config(justify-content) {
+      &[justify-content="flex-start"] { justify-content: flex-start; }
+      &[justify-content="flex-end"] { justify-content: flex-end; }
+      &[justify-content="center"] { justify-content: center; }
+      &[justify-content="space-between"] { justify-content: space-between; }
+      &[justify-content="space-around"] { justify-content: space-around; }
+    }
+
+    @if ngx-grid-config(align-content) {
+      &[align-content="flex-start"] { align-content: flex-start; }
+      &[align-content="flex-end"] { align-content: flex-end; }
+      &[align-content="center"] { align-content: center; }
+      &[align-content="space-between"] { align-content: space-between; }
+      &[align-content="space-around"] { align-content: space-around; }
+    }
+
+    @if ngx-grid-config(align-items) {
+      &[align-items="flex-start"] { align-items: flex-start; }
+      &[align-items="flex-end"] { align-items: flex-end; }
+      &[align-items="center"] { align-items: center; }
+      &[align-items="baseline"] { align-items: baseline; }
+      &[align-items="stretch"] { align-items: stretch; }
+    }
   }
 
   /deep/ .ngx-grid-col {
+    position: relative;
+    min-height: 1px;
+    padding-left:  ($ngx-grid-gutter-width / 2);
+    padding-right: ($ngx-grid-gutter-width / 2);
+    box-sizing: border-box;
     overflow: hidden;
 
-    @include ngx-grid-columns();
+    @if ngx-grid-config(align-self) {
+      &[align-self="auto"] { align-self: auto; }
+      &[align-self="flex-start"] { align-self: flex-start; }
+      &[align-self="flex-end"] { align-self: flex-end; }
+      &[align-self="center"] { align-self: center; }
+      &[align-self="baseline"] { align-self: baseline; }
+      &[align-self="stretch"] { align-self: stretch; }
+    }
+
+    @include ngx-col-sizes();
+
+    @if ngx-grid-config(offset){
+      @include ngx-col-offsets();
+    }
+
+    @if ngx-grid-config(order){
+      @include ngx-col-orders();
+    }
   }
 }

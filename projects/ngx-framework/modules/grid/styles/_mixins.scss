@@ -1,82 +1,33 @@
-﻿@mixin ngx-grid-max-widths($max-widths: $ngx-grid-max-widths){
-  &:not(.ngx-grid-type-fluid) {
-    @each $breakpoint, $max-width in $max-widths {
-      @include ngx-media-breakpoint-up($breakpoint) {
-        max-width: $max-width;
+﻿@mixin ngx-col-sizes() {
+  @each $breakpoint, $positions in $ngx-grid-size-in-breakpoints {
+    @include ngx-media-breakpoint-up($breakpoint) {
+      @each $position in $positions {
+        &.ngx-grid-col-#{$breakpoint}-size-#{$position} {
+          flex: 0 0 percentage($position / $ngx-grid-columns);
+        }
       }
     }
   }
 }
 
-@mixin ngx-col($gutter: $ngx-grid-gutter-width) {
-  position: relative;
-  min-height: 1px;
-  padding-left:  ($gutter / 2);
-  padding-right: ($gutter / 2);
-  box-sizing: border-box;
-}
-
-@mixin ngx-col-size($size, $columns: $ngx-grid-columns) {
-  flex: 0 0 percentage($size / $columns);
-}
-
-@mixin ngx-col-offset($size, $columns: $ngx-grid-columns) {
-  margin-left: percentage(($size - 1) / $columns);
-}
-
-@mixin ngx-col-order($size) {
-  order: $size;
-}
-
-@mixin ngx-col-modifier($breakpoint, $type, $size, $columns) {
-  &.ngx-grid-col-#{$breakpoint}-order-#{$size} {
-    @include ngx-col-order($size);
-  }
-  
-  &.ngx-grid-col-#{$breakpoint}-offset-#{$size} {
-    @include ngx-col-offset($size, $columns);
-  }
-}
-
-@mixin ngx-grid-rows() {
-  &[justify-content="flex-start"] { justify-content: flex-start; }
-  &[justify-content="flex-end"] { justify-content: flex-end; }
-  &[justify-content="center"] { justify-content: center; }
-  &[justify-content="space-between"] { justify-content: space-between; }
-  &[justify-content="space-around"] { justify-content: space-around; }
-
-  &[align-content="flex-start"] { align-content: flex-start; }
-  &[align-content="flex-end"] { align-content: flex-end; }
-  &[align-content="center"] { align-content: center; }
-  &[align-content="space-between"] { align-content: space-between; }
-  &[align-content="space-around"] { align-content: space-around; }
-
-  &[align-items="flex-start"] { align-items: flex-start; }
-  &[align-items="flex-end"] { align-items: flex-end; }
-  &[align-items="center"] { align-items: center; }
-  &[align-items="baseline"] { align-items: baseline; }
-  &[align-items="stretch"] { align-items: stretch; }
-}
-
-@mixin ngx-grid-columns($columns: $ngx-grid-columns, $gutter: $ngx-grid-gutter-width, $breakpoints: $ngx-breakpoints) {
-  &[align-self="auto"] { align-self: auto; }
-  &[align-self="flex-start"] { align-self: flex-start; }
-  &[align-self="flex-end"] { align-self: flex-end; }
-  &[align-self="center"] { align-self: center; }
-  &[align-self="baseline"] { align-self: baseline; }
-  &[align-self="stretch"] { align-self: stretch; }
-
-  @each $breakpoint in map-keys($breakpoints) {
+@mixin ngx-col-offsets() {
+  @each $breakpoint, $positions in $ngx-grid-offset-in-breakpoints {
     @include ngx-media-breakpoint-up($breakpoint) {
-      @for $i from 1 through $columns {
-        &.ngx-grid-col-#{$breakpoint}-size-#{$i} {
-          @include ngx-col-size($i, $columns);
+      @each $position in $positions {
+        &.ngx-grid-col-#{$breakpoint}-offset-#{$position} {
+          margin-left: percentage(($position - 1) / $ngx-grid-columns);
         }
       }
+    }
+  }
+}
 
-      @each $modifier in (order, offset) {
-        @for $i from 1 through $columns {
-          @include ngx-col-modifier($breakpoint, $modifier, $i, $columns)
+@mixin ngx-col-orders() {
+  @each $breakpoint, $positions in $ngx-grid-order-in-breakpoints {
+    @include ngx-media-breakpoint-up($breakpoint) {
+      @each $position in $positions {
+        &.ngx-grid-col-#{$breakpoint}-order-#{$position} {
+           order: $position;
         }
       }
     }

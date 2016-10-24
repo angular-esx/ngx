@@ -11,11 +11,11 @@ import { ngxBaseComponent } from '../../cores';
 
 
 export var ngxGridComponentMetadata = Class({
-  constructor: function(){
+  constructor: function ngxGridComponentMetadata(){
     Object.assign(this, {
       selector: 'ngx-grid',
       templateUrl: './templates/grid.html',
-      styleUrls: ['./styles/grid.scss'],
+      styleUrls: ['./styles/index.scss'],
       inputs: ['type', 'initCssClass:class'],
       changeDetection: ChangeDetectionStrategy.OnPush
     });
@@ -30,7 +30,7 @@ export var ngxGridComponent = Component(new ngxGridComponentMetadata())
     ElementRef,
     Renderer,
 
-    function (elementRef, renderer) {
+    function ngxGridComponent(elementRef, renderer) {
       ngxBaseComponent.apply(this, arguments);
     }
   ],

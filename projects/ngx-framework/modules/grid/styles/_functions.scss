@@ -1,0 +1,3 @@
+@function ngx-grid-config($config-name){
+  @return map-get($ngx-grid-configs, $config-name);
+}

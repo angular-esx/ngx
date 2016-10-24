@@ -13,7 +13,7 @@ var _STYLE_PROPERTIES;
 
 
 export var ngxGridColDirectiveMetadata = Class({
-  constructor: function(){
+  constructor: function ngxGridColDirectiveMetadata(){
     Object.assign(this, {
       selector: 'ngx-grid-col',
       inputs: [
@@ -34,7 +34,7 @@ export var ngxGridColDirective = Directive(new ngxGridColDirectiveMetadata())
     ElementRef,
     Renderer,
 
-    function (elementRef, renderer) {
+    function ngxGridColDirective(elementRef, renderer) {
       ngxBaseDirective.apply(this, arguments);
     }
   ],
