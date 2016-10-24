@@ -9,7 +9,7 @@ import { ngxTemplatePortal } from '../../models';
 
 
 export var ngxTemplatePortalDirectiveMetadata = Class({
-  constructor: function(){
+  constructor: function ngxTemplatePortalDirectiveMetadata(){
     Object.assign(this, {
       selector: '[ngx-portal]'
     });
@@ -24,7 +24,7 @@ export var ngxTemplatePortalDirective = Directive(new ngxTemplatePortalDirective
     TemplateRef,
     ViewContainerRef,
 
-    function (templateRef, viewContainerRef) {
+    function ngxTemplatePortalDirective(templateRef, viewContainerRef) {
       ngxTemplatePortal.apply(this, arguments);
     }
   ]

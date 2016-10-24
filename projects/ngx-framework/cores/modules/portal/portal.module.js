@@ -13,7 +13,7 @@ var _DIRECTIVES = [
 
 
 export var ngxPortalModuleMetadata = Class({
-  constructor: function(){
+  constructor: function ngxPortalModuleMetadata(){
     Object.assign(this, {
       declarations: _DIRECTIVES,
       exports: _DIRECTIVES
@@ -23,5 +23,5 @@ export var ngxPortalModuleMetadata = Class({
 
 export var ngxPortalModule = NgModule(new ngxPortalModuleMetadata())
 .Class({
-  constructor: function(){}
+  constructor: function ngxPortalModule(){}
 });

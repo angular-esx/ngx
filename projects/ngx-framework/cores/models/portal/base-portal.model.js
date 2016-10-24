@@ -4,7 +4,7 @@ import { ngxUtils } from '../../utils';
 
 
 export var ngxBasePortal = Class({
-  constructor: function () {},
+  constructor: function ngxBasePortal() {},
 
   isAttached: function () {
     return !ngxUtils.isNull(this.attachedHost);

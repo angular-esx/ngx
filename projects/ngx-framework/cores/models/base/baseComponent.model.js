@@ -14,7 +14,7 @@ export var ngxBaseComponent = Class({
     ElementRef,
     Renderer,
 
-    function (elementRef, renderer) {
+    function ngxBaseComponent(elementRef, renderer) {
       ngxBaseDirective.apply(this, arguments);
     }
   ],

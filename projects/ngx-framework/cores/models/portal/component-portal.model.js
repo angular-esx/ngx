@@ -6,7 +6,7 @@ import { ngxBasePortal } from './base-portal.model';
 export var ngxComponentPortal = Class({
   extends: ngxBasePortal,
 
-  constructor: function (component, viewContainerRef, injector) {
+  constructor: function ngxComponentPortal(component, viewContainerRef, injector) {
     ngxBasePortal.apply(this, arguments);
 
     this.component = component;

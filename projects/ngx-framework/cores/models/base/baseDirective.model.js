@@ -19,7 +19,7 @@ export var ngxBaseDirective = Class({
     ElementRef,
     Renderer,
 
-    function (elementRef, renderer) {
+    function ngxBaseDirective(elementRef, renderer) {
       if (!elementRef) { throw 'elementRef is required'; }
       if (!renderer) { throw 'renderer is required'; }
 

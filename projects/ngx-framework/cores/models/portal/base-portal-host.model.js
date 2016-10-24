@@ -6,7 +6,7 @@ import { ngxTemplatePortal } from './template-portal.model';
 
 
 export var ngxBasePortalHost = Class({
-  constructor: function () {},
+  constructor: function ngxBasePortalHost() {},
 
   hasAttached: function () {
     return !ngxUtils.isNull(this.attachedPortal);

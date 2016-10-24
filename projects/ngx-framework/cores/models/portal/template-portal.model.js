@@ -6,7 +6,7 @@ import { ngxBasePortal } from './base-portal.model';
 export var ngxTemplatePortal = Class({
   extends: ngxBasePortal,
 
-  constructor: function (templateRef, viewContainerRef) {
+  constructor: function ngxTemplatePortal(templateRef, viewContainerRef) {
     ngxBasePortal.apply(this, arguments);
 
     this.templateRef = templateRef;

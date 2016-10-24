@@ -7,7 +7,7 @@ import { ngxBasePortalHost } from './base-portal-host.model';
 export var ngxDomPortalHost = Class({
   extends: ngxBasePortalHost,
 
-  constructor: function (hostElement, componentResolver) {
+  constructor: function ngxDomPortalHost(hostElement, componentResolver) {
     ngxBasePortalHost.apply(this, arguments);
 
     this.hostElement = hostElement;

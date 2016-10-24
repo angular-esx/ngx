@@ -10,7 +10,7 @@ import { ngxBasePortalHost } from '../../models';
 
 
 export var ngxPortalHostDirectiveMetadata = Class({
-  constructor: function(){
+  constructor: function ngxPortalHostDirectiveMetadata(){
     Object.assign(this, {
       selector: '[ngx-portal-host]',
       inputs: ['portal: ngx-portal-host']
@@ -26,7 +26,7 @@ export var ngxPortalHostDirective = Directive(new ngxPortalHostDirectiveMetadata
     ComponentFactoryResolver,
     ViewContainerRef,
 
-    function (componentFactoryResolver, viewContainerRef) {
+    function ngxPortalHostDirective(componentFactoryResolver, viewContainerRef) {
       ngxBasePortalHost.apply(this, arguments);
 
       this.componentFactoryResolver = componentFactoryResolver;
