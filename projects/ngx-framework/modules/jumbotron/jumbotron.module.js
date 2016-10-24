@@ -11,7 +11,7 @@ var _DIRECTIVES = [
 
 
 export var ngxJumbotronModuleMetadata = Class({
-  constructor: function(){
+  constructor: function ngxJumbotronModuleMetadata(){
     Object.assign(this, {
       declarations: [].concat(_DIRECTIVES),
       exports: [].concat(_DIRECTIVES)
@@ -21,5 +21,5 @@ export var ngxJumbotronModuleMetadata = Class({
 
 export var ngxJumbotronModule = NgModule(new ngxJumbotronModuleMetadata())
 .Class({
-  constructor: function(){}
+  constructor: function ngxJumbotronModule(){}
 });

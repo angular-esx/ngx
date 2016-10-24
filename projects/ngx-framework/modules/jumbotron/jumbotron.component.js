@@ -11,11 +11,11 @@ import { ngxBaseComponent } from '../../cores';
 
 
 export var ngxJumbotronComponentMetadata = Class({
-  constructor: function(){
+  constructor: function ngxJumbotronComponentMetadata(){
     Object.assign(this, {
       selector: 'ngx-jumbotron',
       templateUrl: './templates/jumbotron.html',
-      styleUrls: ['./styles/jumbotron.scss'],
+      styleUrls: ['./styles/index.scss'],
       inputs: ['initCssClass:class'],
       changeDetection: ChangeDetectionStrategy.OnPush
     });
@@ -30,7 +30,7 @@ export var ngxJumbotronComponent = Component(new ngxJumbotronComponentMetadata()
     ElementRef,
     Renderer,
 
-    function (elementRef, renderer) {
+    function ngxJumbotronComponent(elementRef, renderer) {
       ngxBaseComponent.apply(this, arguments);
     }
   ],
