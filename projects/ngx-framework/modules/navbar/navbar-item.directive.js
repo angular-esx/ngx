@@ -5,7 +5,7 @@
 
 
 export var ngxNavbarItemDirectiveMetadata = Class({
-  constructor: function(){
+  constructor: function ngxNavbarItemDirectiveMetadata(){
     Object.assign(this, {
       selector: '[ngx-navbar-item]',
       inputs: ['state:ngx-navbar-item-state'],
@@ -19,7 +19,7 @@ export var ngxNavbarItemDirectiveMetadata = Class({
 
 export var ngxNavbarItemDirective = Directive(new ngxNavbarItemDirectiveMetadata())
 .Class({
-  constructor: function(){},
+  constructor: function ngxNavbarItemDirective(){},
 
   ngOnChanges: function(changeRecord){
     this.isActive = this.state && this.state.indexOf('active') > -1;

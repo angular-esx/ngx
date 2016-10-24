@@ -5,7 +5,7 @@
 
 
 export var ngxNavbarBrandDirectiveMetadata = Class({
-  constructor: function(){
+  constructor: function ngxNavbarBrandDirectiveMetadata(){
     Object.assign(this, {
       selector: '[ngx-navbar-brand]',
       host: {
@@ -17,5 +17,5 @@ export var ngxNavbarBrandDirectiveMetadata = Class({
 
 export var ngxNavbarBrandDirective = Directive(new ngxNavbarBrandDirectiveMetadata())
 .Class({
-  constructor: function(){}
+  constructor: function ngxNavbarBrandDirective(){}
 });

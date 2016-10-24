@@ -11,11 +11,11 @@ import { ngxBaseComponent, ngxUtils } from '../../cores';
 
 
 export var ngxNavbarComponentMetadata = Class({
-  constructor: function(){
+  constructor: function ngxNavbarComponentMetadata(){
     Object.assign(this, {
       selector: 'ngx-navbar',
       templateUrl: './templates/navbar.html',
-      styleUrls: ['./styles/navbar.scss'],
+      styleUrls: ['./styles/index.scss'],
       inputs: ['color', 'position', 'initCssClass:class'],
       changeDetection: ChangeDetectionStrategy.OnPush
     });
@@ -30,7 +30,7 @@ export var ngxNavbarComponent = Component(new ngxNavbarComponentMetadata())
     ElementRef,
     Renderer,
 
-    function (elementRef, renderer) {
+    function ngxNavbarComponent(elementRef, renderer) {
       ngxBaseComponent.apply(this, arguments);
     }
   ],

@@ -1,31 +1,56 @@
-﻿@mixin ngx-navbar-variant($variant-type, $component){
-  $component-default: map-get($component, default);
-  $component-disabled: map-get($component, disabled); 
+﻿@mixin ngx-navbar-positions(){
+  @each $position in ngx-navbar-config(positions){
+    &.ngx-navbar-position-#{$position} {
+      position: fixed;
+      right: 0;
+      left: 0;
+      z-index: $ngx-navbar-index;
 
-  $foreground-color-default: map-get($component-default, foreground-color);
-
-  &.ngx-navbar-color-#{$variant-type} {
-    background-color: map-get($component-default, background-color);
-
-    /deep/ > .ngx-navbar-divider {
-      background-color: $foreground-color-default;
+      @if $position == top {
+        top: 0;
+      }
+      @else if $position == bottom {
+        bottom: 0;
+      }
     }
+  }
+}
 
-    /deep/ > .ngx-navbar-brand {
-      cursor: pointer;
+@mixin ngx-navbar-variant($name){
+  $component: ngx-navbar-component($name);
+  $variant-default: map-get($component, default);
+  $variant-disabled: map-get($component, disabled); 
 
-      @include ngx-state(ngx-navbar-brand, 'self focus hover'){
-        color: $foreground-color-default;
+  $foreground-color-default: map-get($variant-default, foreground-color);
+
+  &.ngx-navbar-color-#{$name} {
+    background-color: map-get($variant-default, background-color);
+
+    @if ngx-navbar-config(divider) {
+      /deep/ > .ngx-navbar-divider {
+        background-color: $foreground-color-default;
       }
     }
 
-    /deep/ > .ngx-navbar-item {
-      color: map-get($component-disabled, foreground-color);
-      cursor: pointer;
+    @if ngx-navbar-config(brand) {
+      /deep/ > .ngx-navbar-brand {
+        cursor: pointer;
 
-      @include ngx-state(ngx-navbar-item, 'focus hover active'){
-        color: $foreground-color-default;
-        text-decoration: none;
+        @include ngx-state(ngx-navbar-brand, 'self focus hover'){
+          color: $foreground-color-default;
+        }
+      }
+    }
+
+    @if ngx-navbar-config(item) {
+      /deep/ > .ngx-navbar-item {
+        color: map-get($variant-disabled, foreground-color);
+        cursor: pointer;
+
+        @include ngx-state(ngx-navbar-item, 'focus hover active'){
+          color: $foreground-color-default;
+          text-decoration: none;
+        }
       }
     }
   }

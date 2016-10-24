@@ -1,4 +1,14 @@
-﻿@mixin ngx-col-sizes() {
+﻿@mixin ngx-col-max-widths(){
+  &:not(.ngx-grid-type-fluid) {
+    @each $breakpoint, $max-width in $ngx-grid-max-width-in-breakpoints {
+      @include ngx-media-breakpoint-up($breakpoint) {
+        max-width: $max-width;
+      }
+    }
+  }
+}
+
+@mixin ngx-col-sizes() {
   @each $breakpoint, $positions in $ngx-grid-size-in-breakpoints {
     @include ngx-media-breakpoint-up($breakpoint) {
       @each $position in $positions {

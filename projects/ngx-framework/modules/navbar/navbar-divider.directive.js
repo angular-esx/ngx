@@ -5,7 +5,7 @@
 
 
 export var ngxNavbarDividerDirectiveMetadata = Class({
-  constructor: function(){
+  constructor: function ngxNavbarDividerDirectiveMetadata(){
     Object.assign(this, {
       selector: 'ngx-navbar-divider',
       host: {
@@ -17,5 +17,5 @@ export var ngxNavbarDividerDirectiveMetadata = Class({
 
 export var ngxNavbarDividerDirective = Directive(new ngxNavbarDividerDirectiveMetadata())
 .Class({
-  constructor: function(){}
+  constructor: function ngxNavbarDividerDirective(){}
 });

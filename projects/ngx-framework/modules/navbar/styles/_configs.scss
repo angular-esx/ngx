@@ -1,0 +1,7 @@
+$ngx-navbar-configs: (
+  positions: (top, bottom),
+  brand: true,
+  divider: true,
+  item: true,
+  variants: (default, primary, info, success, warning, danger)
+);

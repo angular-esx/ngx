@@ -1,0 +1,26 @@
+@function ngx-navbar-config($config-name){
+  @return map-get($ngx-navbar-configs, $config-name);
+}
+
+@function ngx-navbar-component($name){
+  @if $name == default {
+    @return $ngx-navbar-default;
+  }
+  @else if $name == primary {
+    @return $ngx-navbar-primary;
+  }
+  @else if $name == info {
+    @return $ngx-navbar-info;
+  }
+  @else if $name == success {
+    @return $ngx-navbar-success;
+  }
+  @else if $name == warning {
+    @return $ngx-navbar-warning;
+  } 
+  @else if $name == danger {
+    @return $ngx-navbar-danger;
+  }
+
+  @return null;
+}

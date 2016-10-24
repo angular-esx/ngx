@@ -17,7 +17,7 @@ var _DIRECTIVES = [
 
 
 export var ngxNavbarModuleMetadata = Class({
-  constructor: function(){
+  constructor: function ngxNavbarModuleMetadata(){
     Object.assign(this, {
       declarations: [].concat(_DIRECTIVES),
       exports: [].concat(_DIRECTIVES)
@@ -27,5 +27,5 @@ export var ngxNavbarModuleMetadata = Class({
 
 export var ngxNavbarModule = NgModule(new ngxNavbarModuleMetadata())
 .Class({
-  constructor: function(){}
+  constructor: function ngxNavbarModule(){}
 });

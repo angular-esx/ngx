@@ -9,13 +9,7 @@
   box-sizing: border-box;
 
   @if ngx-grid-config(max-widths) {
-    &:not(.ngx-grid-type-fluid) {
-      @each $breakpoint, $max-width in $ngx-grid-max-width-in-breakpoints {
-        @include ngx-media-breakpoint-up($breakpoint) {
-          max-width: $max-width;
-        }
-      }
-    }
+    @include ngx-col-max-widths();
   }
 
   /deep/ .ngx-grid-row {
