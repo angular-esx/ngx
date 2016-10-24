@@ -5,7 +5,7 @@ export class ScssTask extends BaseTask {
   run() {
     let _envt = new Envt(this.args);
 
-    let _ngxNormalizeStream = this.gulp.src('./cores/styles/normalize/normalize.scss')
+    let _ngxNormalizeStream = this.gulp.src('./cores/styles/normalize/index.scss')
     .pipe(this.sass({ outputStyle: 'compressed' }).on('error', this.sass.logError))
     .pipe(this.rename('ngx-normalize.css'));
 
