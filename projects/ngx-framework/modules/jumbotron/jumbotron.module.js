@@ -13,8 +13,8 @@ var _DIRECTIVES = [
 export var ngxJumbotronModuleMetadata = Class({
   constructor: function(){
     Object.assign(this, {
-      declarations: _DIRECTIVES,
-      exports: _DIRECTIVES
+      declarations: [].concat(_DIRECTIVES),
+      exports: [].concat(_DIRECTIVES)
     });
   }
 });
