@@ -1,8 +1,8 @@
-﻿@mixin ngx-label-variant($variant-type, $component){
-  $component-default: map-get($component, default);
+﻿@mixin ngx-label-variant($name){
+  $variant-default: map-get(ngx-label-component($name), default);
 
-  &.ngx-label-color-#{$variant-type} {
-    color: map-get($component-default, foreground-color);
-    background-color: map-get($component-default, background-color);
+  &.ngx-label-color-#{$name} {
+    color: map-get($variant-default, foreground-color);
+    background-color: map-get($variant-default, background-color);
   }
 }

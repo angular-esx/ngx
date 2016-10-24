@@ -11,30 +11,20 @@
   vertical-align: baseline;
   @include ngx-border-radius($ngx-label-border-radius);
 
-  /deep/ a {
-    text-decoration: none;
-    color: ngx-color($ngx-color-white, light);
+  @if ngx-label-config(hide-if-empty){
+    &:empty {
+      display: none;
+    }
   }
 
-  &:empty {
-    display: none;
+  @if ngx-label-config(type-pill){
+     &.ngx-label-type-pill {
+      padding: $ngx-label-pill-padding;
+      border-radius: $ngx-label-pill-border-radius;
+    }
   }
 
-  &.ngx-label-type-pill {
-    padding: $ngx-label-pill-padding;
-    border-radius: $ngx-label-pill-border-radius;
+  @each $variant in ngx-label-config(variants) {
+    @include ngx-label-variant($variant);
   }
-  
-
-  @include ngx-label-variant(default, $ngx-label-default);
-
-  @include ngx-label-variant(primary, $ngx-label-primary);
-
-  @include ngx-label-variant(info, $ngx-label-info);
-
-  @include ngx-label-variant(success, $ngx-label-success);
-
-  @include ngx-label-variant(warning, $ngx-label-warning);
-
-  @include ngx-label-variant(danger, $ngx-label-danger);
 }

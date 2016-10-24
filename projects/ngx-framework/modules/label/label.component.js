@@ -11,11 +11,11 @@ import { ngxBaseComponent, ngxUtils } from '../../cores';
 
 
 export var ngxLabelComponentMetadata = Class({
-  constructor: function(){
+  constructor: function ngxLabelComponentMetadata(){
     Object.assign(this, {
       selector: 'ngx-label',
       templateUrl: './templates/label.html',
-      styleUrls: ['./styles/label.scss'],
+      styleUrls: ['./styles/index.scss'],
       inputs: ['color', 'type', 'initCssClass:class'],
       changeDetection: ChangeDetectionStrategy.OnPush
     });
@@ -30,7 +30,7 @@ export var ngxLabelComponent = Component(new ngxLabelComponentMetadata())
     ElementRef,
     Renderer,
 
-    function (elementRef, renderer) {
+    function ngxLabelComponent(elementRef, renderer) {
       ngxBaseComponent.apply(this, arguments);
     }
   ],

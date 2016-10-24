@@ -1,0 +1,26 @@
+@function ngx-label-config($config-name){
+  @return map-get($ngx-label-configs, $config-name);
+}
+
+@function ngx-label-component($name){
+  @if $name == default {
+    @return $ngx-label-default;
+  }
+  @else if $name == primary {
+    @return $ngx-label-primary;
+  }
+  @else if $name == info {
+    @return $ngx-label-info;
+  }
+  @else if $name == success {
+    @return $ngx-label-success;
+  }
+  @else if $name == warning {
+    @return $ngx-label-warning;
+  } 
+  @else if $name == danger {
+    @return $ngx-label-danger;
+  }
+
+  @return null;
+}
