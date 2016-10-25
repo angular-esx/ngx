@@ -2,4 +2,4 @@ $ngx-label-configs: (
   hide-if-empty: true,
   type-pill: true,
   variants: (default, primary, info, success, warning, danger)
-);
+) !default;

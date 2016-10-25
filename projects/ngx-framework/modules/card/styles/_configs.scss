@@ -11,4 +11,4 @@ $ngx-card-configs: (
   content: true,
   actions: true,
   variants: (primary, secondary, info, success, warning, danger)
-);
+) !default;

@@ -4,4 +4,4 @@ $ngx-navbar-configs: (
   divider: true,
   item: true,
   variants: (default, primary, info, success, warning, danger)
-);
+) !default;
