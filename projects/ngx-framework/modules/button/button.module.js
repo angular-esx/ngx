@@ -1,5 +1,4 @@
 import { 
-  NO_ERRORS_SCHEMA,
   Class,
   NgModule
 } from '@angular/core';
@@ -16,8 +15,7 @@ export var ngxButtonModuleMetadata = Class({
     Object.assign(this, {
       id: 'ngx-button',
       declarations: [].concat(_DIRECTIVES),
-      exports: [].concat(_DIRECTIVES),
-      schemas: [ NO_ERRORS_SCHEMA ]
+      exports: [].concat(_DIRECTIVES)
     });
   }
 });
