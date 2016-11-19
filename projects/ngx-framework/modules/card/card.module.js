@@ -27,6 +27,7 @@ var _DIRECTIVES = [
 export var ngxCardModuleMetadata = Class({
   constructor: function ngxCardModuleMetadata(){
     Object.assign(this, {
+      id: 'ngx-card',
       declarations: [].concat(_DIRECTIVES),
       exports: [].concat(_DIRECTIVES)
     });

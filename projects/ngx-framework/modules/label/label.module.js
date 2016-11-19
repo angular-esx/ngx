@@ -13,6 +13,7 @@ var _DIRECTIVES = [
 export var ngxLabelModuleMetadata = Class({
   constructor: function ngxLabelModuleMetadata(){
     Object.assign(this, {
+      id: 'ngx-label',
       declarations: [].concat(_DIRECTIVES),
       exports: [].concat(_DIRECTIVES)
     });
