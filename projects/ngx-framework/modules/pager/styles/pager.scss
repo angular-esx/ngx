@@ -1,0 +1,29 @@
+﻿:host(.ngx-pager) {
+  padding-left: 0;
+  margin: $ngx-pager-margin;
+  text-align: center;
+
+  @include ngx-clearfix();
+
+  > .ngx-pager-item {
+    $state-default: map-get($ngx-pager-item, default);
+    $state-active: map-get($ngx-pager-item, active);
+
+    display: inline-block;
+    text-decoration: none;
+    padding: $ngx-pager-item-padding;
+    color: map-get($state-default, foreground-color);
+    background-color: map-get($state-default, background-color);
+    border: 1px solid map-get($state-default, border-color);
+    border-radius: $ngx-pager-item-border-radius;
+
+    @include ngx-state(ngx-pager-item, 'focus hover'){
+      background-color: map-get($state-active, background-color);
+    }
+  }
+
+  &.ngx-pager-type-aligned {
+    > .ngx-pager-left-item { float: left; }
+    > .ngx-pager-right-item { float: right; }
+  }
+}

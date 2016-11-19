@@ -72,6 +72,13 @@ export {
 } from './navbar';
 
 export {
+  ngxPagerModuleMetadata,
+  ngxPagerModule,
+  ngxPagerComponentMetadata,
+  ngxPagerComponent
+} from './pager';
+
+export {
   ngxPaginationModuleMetadata,
   ngxPaginationModule,
   ngxPaginationComponentMetadata,

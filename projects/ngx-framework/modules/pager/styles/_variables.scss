@@ -1,0 +1,17 @@
+﻿$ngx-pager-margin: 1rem 0 1rem 0 !default;
+
+
+$ngx-pager-item-padding: 5px 14px;
+$ngx-pager-item-border-radius: 1rem !default;
+
+
+$ngx-pager-item: (
+  active: (
+    background-color: ngx-color($ngx-color-gray, light-1)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-primary),
+    background-color: ngx-color($ngx-color-white, light),
+    border-color: ngx-color($ngx-color-black, light-1)
+  )
+) !default;
