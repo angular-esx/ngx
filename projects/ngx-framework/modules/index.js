@@ -1,4 +1,11 @@
 export {
+  ngxButtonModuleMetadata,
+  ngxButtonModule,
+  ngxButtonComponentMetadata,
+  ngxButtonComponent
+} from './button';
+
+export {
   ngxCardModuleMetadata,
   ngxCardModule,
   ngxCardHeaderComponentMetadata,

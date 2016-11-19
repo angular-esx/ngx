@@ -1,0 +1,49 @@
+@function ngx-button-config($config-name){
+  @return map-get($ngx-button-configs, $config-name);
+}
+
+@function ngx-button-component($name){
+  @if $name == primary {
+    @return $ngx-button-primary;
+  }
+  @else if $name == secondary {
+    @return $ngx-button-secondary;
+  }
+  @else if $name == info {
+    @return $ngx-button-info;
+  }
+  @else if $name == success {
+    @return $ngx-button-success;
+  }
+  @else if $name == warning {
+    @return $ngx-button-warning;
+  } 
+  @else if $name == danger {
+    @return $ngx-button-danger;
+  }
+
+  @return null;
+}
+
+@function ngx-button-component-outline($name){
+  @if $name == primary {
+    @return $ngx-button-primary-outline;
+  }
+  @else if $name == secondary {
+    @return $ngx-button-secondary-outline;
+  }
+  @else if $name == info {
+    @return $ngx-button-info-outline;
+  }
+  @else if $name == success {
+    @return $ngx-button-success-outline;
+  }
+  @else if $name == warning {
+    @return $ngx-button-warning-outline;
+  } 
+  @else if $name == danger {
+    @return $ngx-button-danger-outline;
+  }
+
+  @return null;
+}

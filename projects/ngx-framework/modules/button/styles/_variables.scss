@@ -1,0 +1,240 @@
+﻿$ngx-button-border: 1px solid transparent !default;
+
+
+$ngx-button-sizes: (
+  large: (
+    font-size: ngx-font-size(lg),
+    padding: .75rem 1.25rem,
+    border-radius: ngx-border-radius(lg)
+  ),
+  default: (
+    font-size: ngx-font-size(base),
+    padding: .375rem 1rem,
+    border-radius: ngx-border-radius(base)
+  ),
+  small: (
+    font-size: ngx-font-size(sm),
+    padding: .25rem .75rem,
+    border-radius: ngx-border-radius(sm)
+  )
+) !default;
+
+
+//ngxButton variants
+$ngx-button-primary: (
+  active: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-primary, dark),
+    border-color: ngx-color($ngx-color-primary, dark)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-primary),
+    border-color: ngx-color($ngx-color-primary)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-white, light, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-primary, light),
+    border-color: ngx-color($ngx-color-primary, light)
+  )
+) !default;
+
+$ngx-button-secondary: (
+  active: (
+    foreground-color: ngx-color($ngx-color-gray, dark),
+    background-color: ngx-color($ngx-color-secondary, dark),
+    border-color: ngx-color($ngx-color-gray, light)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-gray, dark),
+    background-color: ngx-color($ngx-color-secondary),
+    border-color: ngx-color($ngx-color-gray, light)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-gray, dark, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-secondary, light),
+    border-color: ngx-color($ngx-color-gray, light, $ngx-opacity-disabled)
+  )
+) !default;
+
+$ngx-button-info: (
+  active: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-info, dark),
+    border-color: ngx-color($ngx-color-info, dark)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-info),
+    border-color: ngx-color($ngx-color-info)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-white, light, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-info, light),
+    border-color: ngx-color($ngx-color-info, light)
+  )
+) !default;
+
+$ngx-button-success: (
+  active: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-success, dark),
+    border-color: ngx-color($ngx-color-success, dark)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-success),
+    border-color: ngx-color($ngx-color-success)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-white, light, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-success, light),
+    border-color: ngx-color($ngx-color-success, light)
+  )
+) !default;
+
+$ngx-button-warning: (
+  active: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-warning, dark),
+    border-color: ngx-color($ngx-color-warning, dark)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-warning),
+    border-color: ngx-color($ngx-color-warning)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-white, light, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-warning, light),
+    border-color: ngx-color($ngx-color-warning, light)
+  )
+) !default;
+
+$ngx-button-danger: (
+  active: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-danger, dark),
+    border-color: ngx-color($ngx-color-danger, dark)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-danger),
+    border-color: ngx-color($ngx-color-danger)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-white, light, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-danger, light),
+    border-color: ngx-color($ngx-color-danger, light)
+  )
+) !default;
+
+
+//Outline ngxButton variants
+$ngx-button-primary-outline: (
+  active: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-primary),
+    border-color: ngx-color($ngx-color-primary)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-primary),
+    background-color: transparent,
+    border-color: ngx-color($ngx-color-primary)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-primary, light),
+    background-color: transparent,
+    border-color: ngx-color($ngx-color-primary, light)
+  )
+) !default;
+
+$ngx-button-secondary-outline: (
+  active: (
+    foreground-color: ngx-color($ngx-color-secondary),
+    background-color: ngx-color($ngx-color-secondary, dark),
+    border-color: ngx-color($ngx-color-secondary, dark)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-gray, dark),
+    background-color: transparent,
+    border-color: ngx-color($ngx-color-gray, light)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-gray, dark, $ngx-opacity-disabled),
+    background-color: transparent,
+    border-color: ngx-color($ngx-color-gray, light, $ngx-opacity-disabled)
+  )
+) !default;
+
+$ngx-button-info-outline: (
+  active: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-info),
+    border-color: ngx-color($ngx-color-info)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-info),
+    background-color: transparent,
+    border-color: ngx-color($ngx-color-info)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-info, light),
+    background-color: transparent,
+    border-color: ngx-color($ngx-color-info, light)
+  )
+) !default;
+
+$ngx-button-success-outline: (
+  active: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-success),
+    border-color: ngx-color($ngx-color-success)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-success),
+    background-color: transparent,
+    border-color: ngx-color($ngx-color-success)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-success, light),
+    background-color: transparent,
+    border-color: ngx-color($ngx-color-success, light)
+  )
+) !default;
+
+$ngx-button-warning-outline: (
+  active: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-warning),
+    border-color: ngx-color($ngx-color-warning)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-warning),
+    background-color: transparent,
+    border-color: ngx-color($ngx-color-warning)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-warning, light),
+    background-color: transparent,
+    border-color: ngx-color($ngx-color-warning, light)
+  )
+) !default;
+
+$ngx-button-danger-outline: (
+  active: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-danger),
+    border-color: ngx-color($ngx-color-danger)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-danger),
+    background-color: transparent,
+    border-color: ngx-color($ngx-color-danger)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-danger, light),
+    background-color: transparent,
+    border-color: ngx-color($ngx-color-danger, light)
+  )
+) !default;

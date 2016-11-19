@@ -1,0 +1,31 @@
+﻿:host(.ngx-button) {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: $ngx-button-border;
+
+  @include ngx-state(ngx-button, 'active'){
+    background-image: none;
+    outline: 0;
+  }
+
+  @include ngx-state(ngx-button, 'disabled'){
+    cursor: not-allowed;
+  }
+
+  @each $size in ngx-button-config(sizes) {
+    @include ngx-button-size($size);
+  }
+
+  @each $variant in ngx-button-config(variants) {
+    @include ngx-button-variant($variant);
+  }
+
+  @each $variant in ngx-button-config(variants-outline) {
+    @include ngx-button-variant-outline($variant);
+  }
+}

@@ -1,0 +1,72 @@
+﻿@mixin ngx-button-size($size-name){
+  @if $size-name == block {
+    &.ngx-button-size-block {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+
+      + .ngx-button-size-block{
+        margin-top: .5rem;
+      }
+    }
+  }
+  @else {
+    $size: map-get($ngx-button-sizes , $size-name);
+
+    &.ngx-button-size-#{$size-name} {
+      font-size: map-get($size, font-size);
+      padding: map-get($size, padding);
+      border-radius: map-get($size, border-radius);
+    }
+  }
+}
+
+@mixin ngx-button-variant($name){
+  $variant-default: map-get(ngx-button-component($name), default);
+  $variant-active: map-get(ngx-button-component($name), active);
+  $variant-disabled: map-get(ngx-button-component($name), disabled);
+
+  &.ngx-button-color-#{$name} {
+    color: map-get($variant-default, foreground-color);
+    background-color: map-get($variant-default, background-color);
+    border-color: map-get($variant-default, border-color);
+
+    @include ngx-state(ngx-button, 'focus hover active'){
+      color: map-get($variant-active, foreground-color);
+      background-image: none;
+      background-color: map-get($variant-active, background-color);
+      border-color: map-get($variant-active, border-color);
+    }
+
+    @include ngx-state(ngx-button, 'disabled'){
+      color: map-get($variant-disabled, foreground-color);
+      background-color: map-get($variant-disabled, background-color);
+      border-color: map-get($variant-disabled, border-color);
+    }
+  }
+}
+
+@mixin ngx-button-variant-outline($name){
+  $variant-default: map-get(ngx-button-component-outline($name), default);
+  $variant-active: map-get(ngx-button-component-outline($name), active);
+  $variant-disabled: map-get(ngx-button-component-outline($name), disabled);
+
+  &.ngx-button-color-#{$name}.ngx-button-color-outline {
+    color: map-get($variant-default, foreground-color);
+    background-color: map-get($variant-default, background-color);
+    border-color: map-get($variant-default, border-color);
+
+    @include ngx-state(ngx-button, 'focus hover active'){
+      color: map-get($variant-active, foreground-color);
+      background-image: none;
+      background-color: map-get($variant-active, background-color);
+      border-color: map-get($variant-active, border-color);
+    }
+
+    @include ngx-state(ngx-button, 'disabled'){
+      color: map-get($variant-disabled, foreground-color);
+      background-color: map-get($variant-disabled, background-color);
+      border-color: map-get($variant-disabled, border-color);
+    }
+  }
+}

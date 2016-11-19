@@ -1,0 +1,5 @@
+$ngx-button-configs: (
+  sizes: (default, large, small, block),
+  variants: (primary, secondary, info, success, warning, danger),
+  variants-outline: (primary, secondary, info, success, warning, danger)
+) !default;
