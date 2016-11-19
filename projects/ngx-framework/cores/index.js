@@ -10,6 +10,11 @@ export {
 } from './models';
 
 export {
+  WINDOW_TOKEN,
+  WINDOW_PROVIDERS
+} from './opaques';
+
+export {
   ngxPortalModuleMetadata, 
   ngxPortalModule,
   ngxPortalHostDirectiveMetadata,
