@@ -21,3 +21,15 @@ $ngx-line-heights: (
   base: 1.5,
   sm: 1.1
 ) !default;
+
+$ngx-font-weights: (
+  light-2: 100,
+  light-1: 200,
+  light: 300,
+  base: 400,
+  bold: 500,
+  bold-1: 600,
+  bold-2: 700,
+  bold-3: 800,
+  bold-4: 900,
+) !default;

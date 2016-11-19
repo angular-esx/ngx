@@ -1,6 +1,6 @@
 $ngx-headings-margin-bottom: .5rem !default;
 $ngx-headings-font-family: inherit !default;
-$ngx-headings-font-weight: 500 !default;
+$ngx-headings-font-weight: ngx-font-weight(bold) !default;
 $ngx-headings-line-height: ngx-line-height(sm) !default;
 $ngx-headings-foreground-color: inherit !default;
 
@@ -26,4 +26,4 @@ $ngx-table-cell-padding: .75rem !default;
 
 $ngx-abbr-border-color: ngx-color($ngx-color-gray, light) !default;
 
-$ngx-dt-font-weight: bold !default;
+$ngx-dt-font-weight: ngx-font-weight(bold-2) !default;

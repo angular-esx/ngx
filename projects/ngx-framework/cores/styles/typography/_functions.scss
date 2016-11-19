@@ -6,6 +6,10 @@
   @return map-get($font-sizes, $size-name);
 }
 
+@function ngx-font-weight($font-weight-name, $font-weights: $ngx-font-weights){
+  @return map-get($font-weights, $font-weight-name);
+}
+
 @function ngx-line-height($line-height-name, $line-heights: $ngx-line-heights){
   @return map-get($line-heights, $line-height-name);
 }
