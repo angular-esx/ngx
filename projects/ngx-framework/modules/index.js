@@ -52,6 +52,13 @@ export {
 } from './label';
 
 export {
+  ngxLinkModuleMetadata,
+  ngxLinkModule,
+  ngxLinkComponentMetadata,
+  ngxLinkComponent
+} from './link';
+
+export {
   ngxNavbarModuleMetadata,
   ngxNavbarModule,
   ngxNavbarBrandDirectiveMetadata,

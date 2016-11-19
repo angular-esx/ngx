@@ -1,0 +1,26 @@
+@function ngx-link-config($config-name){
+  @return map-get($ngx-link-configs, $config-name);
+}
+
+@function ngx-link-component($name){
+  @if $name == primary {
+    @return $ngx-link-primary;
+  }
+  @else if $name == secondary {
+    @return $ngx-link-secondary;
+  }
+  @else if $name == info {
+    @return $ngx-link-info;
+  }
+  @else if $name == success {
+    @return $ngx-link-success;
+  }
+  @else if $name == warning {
+    @return $ngx-link-warning;
+  } 
+  @else if $name == danger {
+    @return $ngx-link-danger;
+  }
+
+  @return null;
+}

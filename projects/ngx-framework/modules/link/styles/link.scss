@@ -1,0 +1,22 @@
+﻿:host(.ngx-link) {
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  border-color: transparent;
+
+  @include ngx-state(ngx-link, 'active'){
+    outline: 0;
+  }
+
+  @include ngx-state(ngx-link, 'disabled'){
+    cursor: not-allowed;
+  }
+
+  @each $size in ngx-link-config(sizes) {
+    @include ngx-link-size($size);
+  }
+
+  @each $variant in ngx-link-config(variants) {
+    @include ngx-link-variant($variant);
+  }
+}

@@ -1,0 +1,38 @@
+﻿@mixin ngx-link-size($size-name){
+  @if $size-name == block {
+    &.ngx-link-size-block {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+
+      + .ngx-link-size-block{
+        margin-top: .5rem;
+      }
+    }
+  }
+  @else {
+    $size: map-get($ngx-link-sizes , $size-name);
+
+    &.ngx-link-size-#{$size-name} {
+      font-size: map-get($size, font-size);
+    }
+  }
+}
+
+@mixin ngx-link-variant($name){
+  $variant-default: map-get(ngx-link-component($name), default);
+  $variant-active: map-get(ngx-link-component($name), active);
+  $variant-disabled: map-get(ngx-link-component($name), disabled);
+
+  &.ngx-link-color-#{$name} {
+    color: map-get($variant-default, foreground-color);
+
+    @include ngx-state(ngx-link, 'focus hover active'){
+      color: map-get($variant-active, foreground-color);
+    }
+
+    @include ngx-state(ngx-link, 'disabled'){
+      color: map-get($variant-disabled, foreground-color);
+    }
+  }
+}
