@@ -1,0 +1,3 @@
+@function ngx-pagination-config($config-name){
+  @return map-get($ngx-pagination-configs, $config-name);
+}

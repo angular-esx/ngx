@@ -1,0 +1,43 @@
+﻿$ngx-pagination-margin: 1rem 0 1rem 0 !default;
+$ngx-pagination-border-radius: ngx-border-radius(base) !default;
+
+
+$ngx-page-item-size: (
+  large: (
+    font-size: ngx-font-size(lg),
+    line-height: ngx-line-height(lg),
+    padding: .75rem 1.5rem,
+    border-radius: ngx-border-radius(lg)
+  ),
+  default: (
+    font-size: ngx-font-size(base),
+    line-height: ngx-line-height(base),
+    padding: .5rem .75rem,
+    border-radius: ngx-border-radius(base)
+  ),
+  small: (
+    font-size: ngx-font-size(sm),
+    line-height: ngx-line-height(sm),
+    padding: .275rem .75rem,
+    border-radius: ngx-border-radius(sm)
+  )
+) !default;
+
+
+$ngx-page-item-state: (
+  active: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-primary),
+    border-color: ngx-color($ngx-color-primary)
+  ),
+  hover: (
+    foreground-color: ngx-color($ngx-color-primary),
+    background-color: ngx-color($ngx-color-gray, light-1),
+    borde-colorr: ngx-color($ngx-color-black, light-1)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-primary),
+    background-color: ngx-color($ngx-color-white, light),
+    border-color: ngx-color($ngx-color-black, light-1)
+  )
+) !default;

@@ -1,0 +1,19 @@
+﻿@mixin ngx-pagination-size($size-name) {
+  $size: map-get($ngx-page-item-size , $size-name);
+  $border-radius: map-get($size, border-radius);
+
+  &.ngx-pagination-size-#{$size-name} {
+    > .ngx-page-item {
+      font-size: map-get($size, font-size);
+      line-height: map-get($size, line-height);
+      padding: map-get($size, padding);
+
+      &:first-child {
+        @include ngx-border-radius($border-radius, left);
+      }
+      &:last-child {
+        @include ngx-border-radius($border-radius, right);
+      }
+    }
+  }
+}

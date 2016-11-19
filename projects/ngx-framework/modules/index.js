@@ -70,3 +70,10 @@ export {
   ngxNavbarComponentMetadata,
   ngxNavbarComponent
 } from './navbar';
+
+export {
+  ngxPaginationModuleMetadata,
+  ngxPaginationModule,
+  ngxPaginationComponentMetadata,
+  ngxPaginationComponent
+} from './pagination';
