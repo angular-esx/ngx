@@ -10,6 +10,8 @@
 
 import { ngxBaseComponent, ngxUtils } from '../../cores';
 
+import { ngxPageBuilder } from './models/page-builder.model';
+
 
 export var ngxPagerComponentMetadata = Class({
   constructor: function ngxPagerComponentMetadata(){
@@ -57,7 +59,7 @@ export var ngxPagerComponent = Component(new ngxPagerComponentMetadata())
     if (ngxUtils.isNull(this.showPrevious)) { this.showPrevious = true; }
     if (ngxUtils.isNull(this.showNext)) { this.showNext = true; }
 
-    this.pageBuilder = new _pageBuilder();
+    this.pageBuilder = this.initPageBuilder();
     this.pageBuilder.build(this.totalPages, this.currentPage, this.setPageEmitter);
   },
 
@@ -95,29 +97,7 @@ export var ngxPagerComponent = Component(new ngxPagerComponentMetadata())
 
     this.currentPage = page.number;
     this.pageBuilder.build(this.totalPages, this.currentPage, this.setPageEmitter);
-  }
+  },
+
+  initPageBuilder: function(){ return new ngxPageBuilder(); }
 });
-
-function _pageBuilder() {
-  this.prevPage = { number: null, link: '#' };
-  this.nextPage = { number: null, link: '#' };
-
-  this.build = function (totalPages, currentPage, setPageEmitter) {
-    this.prevPage.number = currentPage - 1 > 0 ? currentPage - 1 : null;
-    this.prevPage.link = '#';
-
-    this.nextPage.number = currentPage + 1 <= totalPages ? currentPage + 1 : null;
-    this.nextPage.link = '#';
-
-    var _self = this;
-    setPageEmitter.emit({
-      currentPage: currentPage,
-      setPrevLink: function (link) {
-        if (_self.prevPage.number > 0) { _self.prevPage.link = link; }
-      },
-      setNextLink: function (link) {
-        if (_self.nextPage.number <= totalPages) { _self.nextPage.link = link; }
-      }
-    });
-  };
-}

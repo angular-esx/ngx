@@ -75,7 +75,8 @@ export {
   ngxPagerModuleMetadata,
   ngxPagerModule,
   ngxPagerComponentMetadata,
-  ngxPagerComponent
+  ngxPagerComponent,
+  ngxPageBuilder
 } from './pager';
 
 export {
