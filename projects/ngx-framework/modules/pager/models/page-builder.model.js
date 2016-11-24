@@ -2,7 +2,7 @@ import { Class } from '@angular/core';
 
 
 export var ngxPageBuilder = Class({
-  constructor: function(){
+  constructor: function ngxPageBuilder(){
     this.prevPage = { number: null, link: '#' };
     this.nextPage = { number: null, link: '#' };
   },

@@ -2,7 +2,7 @@ import { Class } from '@angular/core';
 
 
 export var ngxPaginationBuilder = Class({
-  constructor: function(){
+  constructor: function ngxPaginationBuilder(){
     this._indexedPages = {};
     this._sortedPages = [];
     this.pages = [];
