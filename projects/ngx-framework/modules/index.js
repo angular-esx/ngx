@@ -38,6 +38,15 @@ export {
 } from './grid';
 
 export {
+  ngxIconModuleMetadata,
+  ngxIconModule,
+  ngxIconComponentMetadata,
+  ngxIconComponent,
+  ngxIconService,
+  ngxSvgIconConfig
+} from './icon';
+
+export {
   ngxJumbotronModuleMetadata,
   ngxJumbotronModule,
   ngxJumbotronComponentMetadata,
