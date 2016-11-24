@@ -119,12 +119,13 @@ export var ngxBaseDirective = Class({
 
     var _parts = [],
         _prefixClass = this.getPrefixClass(),
-        _propertyName = ngxUtils.toHyphenCase(propertyName);
+        _propertyName = ngxUtils.toHyphenCase(propertyName),
+        _propertyValue = propertyValue.toString();
 
-    if(propertyValue.trim().indexOf(' ') > -1){
+    if(_propertyValue.trim().indexOf(' ') > -1){
       var _cssClasses = [];
 
-      propertyValue.split(' ').forEach(function(value) {
+      _propertyValue.split(' ').forEach(function(value) {
         _parts.length = 0;  
         
         if(_prefixClass){ _parts.push(_prefixClass); }
@@ -140,7 +141,7 @@ export var ngxBaseDirective = Class({
     else {
       if(_prefixClass){ _parts.push(_prefixClass); }
       _parts.push(_propertyName);
-      _parts.push(propertyValue);
+      _parts.push(_propertyValue);
 
       return _parts.join('-');
     }

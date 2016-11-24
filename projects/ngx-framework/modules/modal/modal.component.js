@@ -126,7 +126,7 @@ export var ngxModalComponent = Component(new ngxModalComponentMetadata())
 
     if (ngxUtils.isEmpty(this.size)) {
       this.size = 'default';
-      this.buildChangeRecord(_styleProperties.SIZE, this.size, null, _changeRecord);
+      _changeRecord = Object.assign(_changeRecord || {}, this.buildChangeRecord(_styleProperties.SIZE, this.size));
     }
 
     return _changeRecord;
