@@ -1,0 +1,21 @@
+@mixin ngx-modal-diablog-margins(){
+  @each $breakpoint, $margin in $ngx-modal-dialog-margin-in-breakpoints {
+    @include ngx-media-breakpoint-up($breakpoint) {
+      margin: $margin;
+    }
+  }
+}
+
+@mixin ngx-modal-diablog-sizes(){
+  @each $breakpoint, $sizes in $ngx-modal-dialog-size-in-breakpoints {
+    @include ngx-media-breakpoint-up($breakpoint) {
+      @each $size, $width in $sizes {
+        &.ngx-modal-size-#{$size} {
+          > .ngx-modal-dialog {
+            width: $width;
+          }
+        }
+      }
+    }
+  }
+}

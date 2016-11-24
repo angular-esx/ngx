@@ -1,0 +1,86 @@
+﻿:host(.ngx-modal) {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $ngx-modal-index;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+  -webkit-overflow-scrolling: touch;
+  padding: $ngx-modal-padding;
+  background-color: transparent;
+
+  @include ngx-modal-diablog-sizes();
+
+  &.ngx-modal-state-active {
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  &.ngx-modal-backdrop {
+    background-color: $ngx-modal-background-color;
+  }
+
+  > .ngx-modal-dialog {
+    position: relative;
+
+    @include ngx-modal-diablog-margins();
+
+    > .ngx-modal-content {
+      position: relative;
+      background-color: $ngx-modal-content-background-color;
+      background-clip: padding-box;
+      border: $ngx-modal-content-border;
+      border-radius: $ngx-modal-content-border-radius;
+      outline: 0;
+
+      /deep/ > .ngx-modal-header {
+        display: block;
+        padding: $ngx-modal-header-padding;
+        border-bottom: $ngx-modal-header-border-bottom;
+
+        > .ngx-modal-dismiss {
+          font-size: 1.5rem;
+          font-weight: 700;
+          line-height: 1;
+          color: ngx-color($ngx-color-gray, dark);
+          background: transparent;
+          padding: 0;
+          margin-top: -2px;
+          border: 0;
+          opacity: .2;
+          position: relative;
+          float: right;
+          top: -2px;
+          text-decoration: none;
+          cursor: pointer;
+          -webkit-appearance: none;
+
+          @include ngx-state(ngx-alert-dismiss, 'focus hover'){
+            opacity: .5;
+          }
+        }
+
+        > .ngx-modal-title {
+          margin: 0;
+        }
+      }
+    
+      /deep/ > .ngx-modal-body {
+        display: block;
+        position: relative;
+        padding: $ngx-modal-body-padding;
+      }
+      
+      /deep/ > .ngx-modal-footer {
+        display: block;
+        padding: $ngx-modal-body-padding;
+        text-align: right;
+        border-top: $ngx-modal-footer-border-top;
+      }  
+    }
+  }
+}

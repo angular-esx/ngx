@@ -1,0 +1,38 @@
+﻿$ngx-modal-padding: 0 10px;
+$ngx-modal-index: ngx-z-index(above-2) !default;
+$ngx-modal-background-color: ngx-color($ngx-color-black, dark-1, .5);
+
+
+$ngx-modal-content-background-color: ngx-color($ngx-color-white, light) !default;
+$ngx-modal-content-border: 1px solid ngx-color($ngx-color-gray, light) !default;
+$ngx-modal-content-border-radius: ngx-border-radius(lg) !default;
+
+
+$ngx-modal-header-padding: 15px !default;
+$ngx-modal-header-border-bottom: 1px solid ngx-color($ngx-color-gray, light-1) !default;
+
+
+$ngx-modal-body-padding: 15px !default;
+
+
+$ngx-modal-footer-padding: 15px !default;
+$ngx-modal-footer-border-top: 1px solid ngx-color($ngx-color-gray, light-1) !default;
+
+
+$ngx-modal-dialog-margin-in-breakpoints: (
+  xs: 10px auto,
+  sm: 30px auto
+) !default;
+
+$ngx-modal-dialog-size-in-breakpoints: (
+  xs: (
+    default: auto
+  ),
+  sm: (
+    default: 600px,
+    small: 300px
+  ),
+  md: (
+    large: 900px
+  )
+) !default;
