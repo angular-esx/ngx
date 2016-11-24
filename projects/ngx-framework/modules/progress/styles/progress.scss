@@ -1,0 +1,47 @@
+﻿@if ngx-progress-config(color-animated-striped){
+  @keyframes ngx-progress-bar-stripes {
+    from  { background-position: 1rem 0; }
+    to    { background-position: 0 0; }
+  }
+}
+
+:host(.ngx-progress) {
+  display: block;
+  height: $ngx-progress-height;
+  margin: $ngx-progress-margin;
+  overflow: hidden;
+  background-color: $ngx-progress-background-color;
+
+  @include ngx-border-radius($ngx-progress-border-radius);
+
+  > .ngx-progress-bar {
+    text-align: center;
+    font-size: $ngx-progress-bar-font-size;
+    line-height: $ngx-progress-bar-line-height;
+    float: left;
+    width: 0%;
+    height: 100%;
+    transition: $ngx-progress-bar-transition;
+  }
+
+  @if ngx-progress-config(color-striped){
+    &.ngx-progress-color-striped {
+      > .ngx-progress-bar {
+        background-size: $ngx-progress-bar-striped-background-size;
+        @include ngx-gradient-striped();
+      }
+
+      @if ngx-progress-config(color-animated-striped){
+        &.ngx-progress-color-animated-striped {
+          > .ngx-progress-bar {
+            animation: ngx-progress-bar-stripes 2s linear infinite;
+          }
+        }
+      }
+    }
+  }
+
+  @each $variant in ngx-progress-config(variants) {
+    @include ngx-progress-variant($variant);
+  }
+}

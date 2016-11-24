@@ -1,0 +1,101 @@
+﻿$ngx-progress-height: 1rem !default;
+$ngx-progress-margin: 0 0 1rem 0 !default;
+$ngx-progress-border-radius: ngx-border-radius(base) !default;
+$ngx-progress-background-color: ngx-color($ngx-color-gray, light, $ngx-opacity-disabled) !default;
+
+
+$ngx-progress-bar-font-size: ngx-font-size(sm) !default;
+$ngx-progress-bar-line-height: 1.1rem !default;
+$ngx-progress-bar-transition: width 1s ease !default;
+$ngx-progress-bar-striped-background-size: 1rem 1rem !default;
+
+
+$ngx-progress-primary: (
+  active: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-primary, dark),
+    border-color: ngx-color($ngx-color-primary, dark)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-primary),
+    border-color: ngx-color($ngx-color-primary)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-white, light, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-primary, light),
+    border-color: ngx-color($ngx-color-primary, light)
+  )
+) !default;
+
+$ngx-progress-info: (
+  active: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-info, dark),
+    border-color: ngx-color($ngx-color-info, dark)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-info),
+    border-color: ngx-color($ngx-color-info)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-white, light, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-info, light),
+    border-color: ngx-color($ngx-color-info, light)
+  )
+) !default;
+
+$ngx-progress-success: (
+  active: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-success, dark),
+    border-color: ngx-color($ngx-color-success, dark)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-success),
+    border-color: ngx-color($ngx-color-success)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-white, light, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-success, light),
+    border-color: ngx-color($ngx-color-success, light)
+  )
+) !default;
+
+$ngx-progress-warning: (
+  active: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-warning, dark),
+    border-color: ngx-color($ngx-color-warning, dark)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-warning),
+    border-color: ngx-color($ngx-color-warning)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-white, light, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-warning, light),
+    border-color: ngx-color($ngx-color-warning, light)
+  )
+) !default;
+
+$ngx-progress-danger: (
+  active: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-danger, dark),
+    border-color: ngx-color($ngx-color-danger, dark)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-danger),
+    border-color: ngx-color($ngx-color-danger)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-white, light, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-danger, light),
+    border-color: ngx-color($ngx-color-danger, light)
+  )
+) !default;

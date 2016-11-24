@@ -1,0 +1,23 @@
+@function ngx-progress-config($config-name){
+  @return map-get($ngx-progress-configs, $config-name);
+}
+
+@function ngx-progress-component($name){
+  @if $name == primary {
+    @return $ngx-progress-primary;
+  }
+  @else if $name == info {
+    @return $ngx-progress-info;
+  }
+  @else if $name == success {
+    @return $ngx-progress-success;
+  }
+  @else if $name == warning {
+    @return $ngx-progress-warning;
+  } 
+  @else if $name == danger {
+    @return $ngx-progress-danger;
+  }
+
+  @return null;
+}

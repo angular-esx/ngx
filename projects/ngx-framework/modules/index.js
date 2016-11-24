@@ -109,3 +109,10 @@ export {
   ngxPaginationComponent,
   ngxPaginationBuilder
 } from './pagination';
+
+export {
+  ngxProgressModuleMetadata,
+  ngxProgressModule,
+  ngxProgressComponentMetadata,
+  ngxProgressComponent
+} from './progress';
