@@ -20,8 +20,10 @@
     overflow-y: auto;
   }
 
-  &.ngx-modal-backdrop {
-    background-color: $ngx-modal-background-color;
+  @if ngx-modal-config(backdrop) {
+    &.ngx-modal-backdrop {
+      background-color: $ngx-modal-background-color;
+    }
   }
 
   > .ngx-modal-dialog {
@@ -37,35 +39,41 @@
       border-radius: $ngx-modal-content-border-radius;
       outline: 0;
 
-      /deep/ > .ngx-modal-header {
-        display: block;
-        padding: $ngx-modal-header-padding;
-        border-bottom: $ngx-modal-header-border-bottom;
+      @if ngx-modal-config(modal-header) {
+        /deep/ > .ngx-modal-header {
+          display: block;
+          padding: $ngx-modal-header-padding;
+          border-bottom: $ngx-modal-header-border-bottom;
 
-        > .ngx-modal-dismiss {
-          font-size: 1.5rem;
-          font-weight: 700;
-          line-height: 1;
-          color: ngx-color($ngx-color-gray, dark);
-          background: transparent;
-          padding: 0;
-          margin-top: -2px;
-          border: 0;
-          opacity: .2;
-          position: relative;
-          float: right;
-          top: -2px;
-          text-decoration: none;
-          cursor: pointer;
-          -webkit-appearance: none;
+          @if ngx-modal-config(modal-dismiss) {
+            > .ngx-modal-dismiss {
+              font-size: 1.5rem;
+              font-weight: 700;
+              line-height: 1;
+              color: ngx-color($ngx-color-gray, dark);
+              background: transparent;
+              padding: 0;
+              margin-top: -2px;
+              border: 0;
+              opacity: .2;
+              position: relative;
+              float: right;
+              top: -2px;
+              text-decoration: none;
+              cursor: pointer;
+              -webkit-appearance: none;
 
-          @include ngx-state(ngx-alert-dismiss, 'focus hover'){
-            opacity: .5;
+              @include ngx-state(ngx-alert-dismiss, 'focus hover'){
+                opacity: .5;
+              }
+            }
           }
-        }
 
-        > .ngx-modal-title {
-          margin: 0;
+          @if ngx-modal-config(modal-title) {
+            > .ngx-modal-title {
+              margin: 0;
+            }
+          }
         }
       }
     
@@ -75,11 +83,13 @@
         padding: $ngx-modal-body-padding;
       }
       
-      /deep/ > .ngx-modal-footer {
-        display: block;
-        padding: $ngx-modal-body-padding;
-        text-align: right;
-        border-top: $ngx-modal-footer-border-top;
+      @if ngx-modal-config(modal-footer) {
+        /deep/ > .ngx-modal-footer {
+          display: block;
+          padding: $ngx-modal-body-padding;
+          text-align: right;
+          border-top: $ngx-modal-footer-border-top;
+        }
       }  
     }
   }
