@@ -59,6 +59,20 @@ export {
 } from './link';
 
 export {
+  ngxModalModuleMetadata,
+  ngxModalModule,
+  ngxModalHeaderComponentMetadata,
+  ngxModalHeaderComponent,
+  ngxModalBodyDirectiveMetadata,
+  ngxModalBodyDirective,
+  ngxModalFooterDirectiveMetadata,
+  ngxModalFooterDirective,
+  ngxModalComponentMetadata,
+  ngxModalComponent,
+  ngxModalService
+} from './modal';
+
+export {
   ngxNavbarModuleMetadata,
   ngxNavbarModule,
   ngxNavbarBrandDirectiveMetadata,

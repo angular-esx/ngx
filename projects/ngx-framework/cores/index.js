@@ -10,6 +10,8 @@ export {
 } from './models';
 
 export {
+  DOCUMENT_TOKEN,
+  DOCUMENT_PROVIDERS,
   WINDOW_TOKEN,
   WINDOW_PROVIDERS
 } from './opaques';
