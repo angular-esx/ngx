@@ -25,7 +25,6 @@ export var ngxIconComponentMetadata = Class({
         'svgIcon:svg-icon',
         'fontSet:font-set',
         'fontIcon:font-icon',
-        'prefixClass:prefix-class',
         'initCssClass:class'
       ],
       changeDetection: ChangeDetectionStrategy.OnPush
