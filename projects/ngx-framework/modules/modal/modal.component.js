@@ -3,6 +3,7 @@ import {
   Component,
   ElementRef,
   Renderer,
+  ChangeDetectionStrategy,
   Inject,
   trigger,
   state,
@@ -29,6 +30,7 @@ export var ngxModalComponentMetadata = Class({
       templateUrl: './templates/modal.html',
       styleUrls: ['./styles/index.scss'],
       inputs: ['id', 'type', 'size', 'backdrop', 'initCssClass:class'],
+      changeDetection: ChangeDetectionStrategy.OnPush,
       host: {
         '(click)': 'click($event)'
       },
