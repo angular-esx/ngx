@@ -14,6 +14,8 @@ import {
   ngxUtils 
 } from '../../cores';
 
+import { ngxPaginationBuilder } from './models/pagination-builder.model';
+
 
 export var ngxPaginationComponentMetadata = Class({
   constructor: function ngxPaginationComponentMetadata(){
@@ -75,9 +77,9 @@ export var ngxPaginationComponent = Component(new ngxPaginationComponentMetadata
       _changeRecord = this.buildChangeRecord(_styleProperties.SIZE, this.size);
      }
 
-    this.startPage = _getStartPage(this.pageSize, this.currentPage);
+    this.startPage = this.calcStartPage();
 
-    this.pageBuilder = new _pageBuilder();
+    this.pageBuilder = this.initPageBuilder();
     this.pageBuilder.build(this.totalPages, this.pageSize, this.startPage, this.setPageEmitter);
 
      return _changeRecord;
@@ -116,61 +118,14 @@ export var ngxPaginationComponent = Component(new ngxPaginationComponentMetadata
     }
 
     this.currentPage = page.number;
-    this.startPage = _getStartPage(this.pageSize, this.currentPage);
+    this.startPage = this.calcStartPage();
     this.pageBuilder.build(this.totalPages, this.pageSize, this.startPage, this.setPageEmitter);
-  }
+  },
+
+  calcStartPage: function() {
+    var _startPage = this.currentPage - parseInt(this.pageSize / 2);
+    return _startPage <= 0 ? 1 : _startPage;
+  },
+
+  initPageBuilder: function() { return new ngxPaginationBuilder(); }
 });
-
-function _getStartPage(pageSize, currentPage) {
-  var _startPage = currentPage - parseInt(pageSize / 2);
-  return _startPage <= 0 ? 1 : _startPage;
-}
-
-function _pageBuilder() {
-  var _indexedPages = {};
-  var _sortedPages = [];
-  this.pages = [];
-
-  this.build = function (totalPages, pageSize, startPage, setPageEmitter) {
-    var _page;
-    var _setPageLink = function(page){
-      return function(link){ page.link = link; };
-    };
-
-    for (var i = startPage; i <= totalPages; i++) {
-      if (i === startPage + pageSize) { break; }
-      if (_indexedPages[i]) { continue; }
-
-      _page = { number: i, link: '#' };
-      setPageEmitter.emit({ 
-        pageNumber: _page.number,
-        setPageLink: _setPageLink(_page)
-      });
-
-      _indexedPages[i] = _page;
-
-      _sortedPages.push(_page);
-    }
-
-    _sortedPages.sort(function (item01, item02) {
-      return item01.number === item02.number ? 0 : (item01.number > item02.number ? 1 : -1);
-    });
-
-    var _tempPages = [];
-    for(i = 0; i < _sortedPages.length; i++) {
-      _page = _sortedPages[i];
-
-      if (_page.number === startPage + pageSize) { break; }
-
-      if (_page.number >= startPage) {
-        _tempPages.push(_page);
-      }
-    }
-
-    this.pages = _tempPages;
-  };
-
-  this.getPage = function (pageNumber) {
-    return _indexedPages[pageNumber];
-  };
-}

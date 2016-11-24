@@ -82,5 +82,6 @@ export {
   ngxPaginationModuleMetadata,
   ngxPaginationModule,
   ngxPaginationComponentMetadata,
-  ngxPaginationComponent
+  ngxPaginationComponent,
+  ngxPaginationBuilder
 } from './pagination';
