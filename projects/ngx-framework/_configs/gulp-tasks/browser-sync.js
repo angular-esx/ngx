@@ -8,7 +8,10 @@ export class BrowserSyncTask extends BaseTask {
     this.browserSync({
       server: {
         baseDir: _envt.distPath,
-        index: 'index.html'
+        index: 'index.html',
+        routes: {
+          '/icon': './modules/icon/tests/ui/isolated',
+        },
       },
       port: 8080,
       open: true,
