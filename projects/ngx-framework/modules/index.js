@@ -46,6 +46,16 @@ export {
 } from './grid';
 
 export {
+  ngxHideModuleMetadata,
+  ngxHideModule,
+  ngxHideUpDirectiveMetadata,
+  ngxHideUpDirective,
+  ngxHideDownDirectiveMetadata,
+  ngxHideDownDirective,
+  ngxBaseHide
+} from './hide';
+
+export {
   ngxIconModuleMetadata,
   ngxIconModule,
   ngxIconComponentMetadata,
