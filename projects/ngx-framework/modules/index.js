@@ -27,6 +27,14 @@ export {
 } from './card';
 
 export {
+  ngxCollapseModuleMetadata,
+  ngxCollapseModule,
+  ngxCollapseComponentMetadata,
+  ngxCollapseComponent,
+  ngxCollapseService
+} from './collapse';
+
+export {
   ngxGridModuleMetadata,
   ngxGridModule,
   ngxGridRowDirectiveMetadata,
