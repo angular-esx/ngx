@@ -97,12 +97,12 @@ export var ngxModalComponent = Component(new ngxModalComponentMetadata())
         return cssClass !== _stateClass;
       });
 
+      this.changeDetectorRef.markForCheck();
+
       setTimeout(function() {
         ngxBaseComponent.prototype.ngOnChanges.apply(_self, [changeRecord]);
 
         _self.renderer.setElementProperty(_self.document.body, 'className', _classes.join(' ').trim());
-
-        _self.changeDetectorRef.markForCheck();
       }, this.fadeOutAwaittimes);
     }
   },
@@ -124,10 +124,7 @@ export var ngxModalComponent = Component(new ngxModalComponentMetadata())
         _changeRecord;
 
     this.fadeOutAwaittimes = 0.25 * 1000;
-
-    if (ngxUtils.isEmpty(this.state) && ngxUtils.isNull(this.isActive)) {
-      this.isActive = false;
-    }
+    this.isActive = false;
 
     if (ngxUtils.isEmpty(this.backdrop)) {
       this.backdrop = true;
