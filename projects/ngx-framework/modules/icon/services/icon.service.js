@@ -13,7 +13,7 @@ import 'rxjs/add/observable/forkJoin';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/do';
 
-var _Observable = Observable.Observable;
+var _observable = Observable.Observable;
 
 
 export var ngxIconService = Class({
@@ -57,7 +57,7 @@ export var ngxIconService = Class({
   },
   getSvgIconByUrl: function (url) {
     if(this._cachedSvgIcons.hasOwnProperty(url)){
-      return _Observable.of(this._cachedSvgIcons[url]);
+      return _observable.of(this._cachedSvgIcons[url]);
     }
     
     var _self = this;
@@ -91,7 +91,7 @@ export var ngxIconService = Class({
 
         if(_svgIconSet.hasSvgElement()){
           _svgElement = _svgIconSet.querySvgElement(iconName);
-          if(_svgElement){ return _Observable.of(_svgElement); }
+          if(_svgElement){ return _observable.of(_svgElement); }
         }
         else {
           _svgIconSetsHaveNoElement.push(_svgIconSet);
@@ -103,7 +103,7 @@ export var ngxIconService = Class({
         _getSvgElement$.push(_svgIconSets[i].getSvgElement(this));
       }
 
-      return _Observable.forkJoin(_getSvgElement$)
+      return _observable.forkJoin(_getSvgElement$)
       .map(function () {
         for (var i = 0; i < _svgIconSetsHaveNoElement.length; i++) {
           _svgIconSet = _svgIconSets[i];

@@ -4,7 +4,7 @@ import Observable from 'rxjs/Observable';
 import 'rxjs/add/observable/from';
 import 'rxjs/add/operator/share';
 
-var _Observable = Observable.Observable;
+var _observable = Observable.Observable;
 
 var _ACTIONS = {
   SHOW_MODAL: 'SHOW_MODAL',
@@ -16,7 +16,7 @@ export var ngxModalService = Class({
   constructor: function ngxModalService() {
     var _self = this;
 
-    this.ngxModal$ = new _Observable(function (observer) {
+    this.ngxModal$ = new _observable(function (observer) {
       _self.observer = observer;
     })
     .share();
@@ -31,14 +31,14 @@ export var ngxModalService = Class({
   },
 
   getShow$: function (modalId) {
-    return _Observable.from([{ id: modalId, type: _ACTIONS.SHOW_MODAL }]);
+    return _observable.from([{ id: modalId, type: _ACTIONS.SHOW_MODAL }]);
   },
   show: function (modalId) {
     this.next({ id: modalId, type: _ACTIONS.SHOW_MODAL });
   },
 
   getHide$: function (modalId) {
-    return _Observable.from([{ id: modalId, type: _ACTIONS.HIDE_MODAL }]);
+    return _observable.from([{ id: modalId, type: _ACTIONS.HIDE_MODAL }]);
   },
   hide: function (modalId) {
     this.next({ id: modalId, type: _ACTIONS.HIDE_MODAL });
