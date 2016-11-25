@@ -3,6 +3,7 @@ import {
   Component,
   ElementRef,
   Renderer,
+  ChangeDetectorRef,
   ChangeDetectionStrategy,
   Inject,
   trigger,
@@ -52,12 +53,14 @@ export var ngxModalComponent = Component(new ngxModalComponentMetadata())
   constructor: [
     ElementRef,
     Renderer,
+    ChangeDetectorRef,
     ngxModalService,
     Inject(DOCUMENT_TOKEN),
 
-    function ngxModalComponent(elementRef, renderer, ngxModalService, document) {
+    function ngxModalComponent(elementRef, renderer, changeDetectorRef, ngxModalService, document) {
       ngxBaseComponent.apply(this, arguments);
 
+      this.changeDetectorRef = changeDetectorRef;
       this.ngxModalService = ngxModalService;
       this.document = document;
     }
@@ -83,6 +86,8 @@ export var ngxModalComponent = Component(new ngxModalComponentMetadata())
       _classes.push(this.buildCssClassForProperty(_styleProperties.STATE, this.state));
 
       this.renderer.setElementProperty(this.document.body, 'className', _classes.join(' ').trim());
+
+      this.changeDetectorRef.markForCheck();
     }
     else {
       var _self = this;
@@ -96,6 +101,8 @@ export var ngxModalComponent = Component(new ngxModalComponentMetadata())
         ngxBaseComponent.prototype.ngOnChanges.apply(_self, [changeRecord]);
 
         _self.renderer.setElementProperty(_self.document.body, 'className', _classes.join(' ').trim());
+
+        _self.changeDetectorRef.markForCheck();
       }, this.fadeOutAwaittimes);
     }
   },
@@ -117,7 +124,10 @@ export var ngxModalComponent = Component(new ngxModalComponentMetadata())
         _changeRecord;
 
     this.fadeOutAwaittimes = 0.25 * 1000;
-    this.isActive = false;
+
+    if (ngxUtils.isEmpty(this.state) && ngxUtils.isNull(this.isActive)) {
+      this.isActive = false;
+    }
 
     if (ngxUtils.isEmpty(this.backdrop)) {
       this.backdrop = true;
@@ -128,7 +138,7 @@ export var ngxModalComponent = Component(new ngxModalComponentMetadata())
       this.size = 'default';
       _changeRecord = Object.assign(_changeRecord || {}, this.buildChangeRecord(_styleProperties.SIZE, this.size));
     }
-
+    
     return _changeRecord;
   },
 
