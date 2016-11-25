@@ -1,0 +1,9 @@
+$ngx-item-configs: (
+  image: true,
+  image-align-self: true,
+  title: true,
+  subtitle: true,
+  actions: true,
+  actions-align-self: true,
+  variants: (primary, info, success, warning, danger),
+) !default;

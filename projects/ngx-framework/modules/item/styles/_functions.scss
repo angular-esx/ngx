@@ -1,0 +1,26 @@
+@function ngx-item-config($config-name){
+  @return map-get($ngx-item-configs, $config-name);
+}
+
+@function ngx-item-component($name){
+  @if $name == default {
+    @return $ngx-item-default;
+  }
+  @else if $name == primary {
+    @return $ngx-item-primary;
+  }
+  @else if $name == info {
+    @return $ngx-item-info;
+  }
+  @else if $name == success {
+    @return $ngx-item-success;
+  }
+  @else if $name == warning {
+    @return $ngx-item-warning;
+  } 
+  @else if $name == danger {
+    @return $ngx-item-danger;
+  }
+
+  @return null;
+}

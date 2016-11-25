@@ -47,6 +47,23 @@ export {
 } from './icon';
 
 export {
+  ngxItemModuleMetadata,
+  ngxItemModule,
+  ngxItemTitleDirectiveMetadata,
+  ngxItemTitleDirective,
+  ngxItemSubtitleDirectiveMetadata,
+  ngxItemSubtitleDirective,
+  ngxItemTextDirectiveMetadata,
+  ngxItemTextDirective,
+  ngxItemImageDirectiveMetadata,
+  ngxItemImageDirective,
+  ngxItemActionsDirectiveMetadata,
+  ngxItemActionsDirective,
+  ngxItemComponentMetadata,
+  ngxItemComponent
+} from './item';
+
+export {
   ngxJumbotronModuleMetadata,
   ngxJumbotronModule,
   ngxJumbotronComponentMetadata,

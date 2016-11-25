@@ -1,0 +1,74 @@
+:host(.ngx-item) {
+  display: flex;
+  position: relative;
+  width: 100%;
+  padding: $ngx-item-padding;
+  border: $ngx-item-border;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  + .ngx-item {
+    margin-top: -1px;
+  }
+
+  @if ngx-item-config(image){
+    /deep/ > .ngx-item-image {
+      display: block;
+      padding: $ngx-item-image-padding;
+
+      @if ngx-item-config(image-align-self){
+        &[align-self="start"] {
+          align-self: flex-start;
+        }
+        &[align-self="center"] {
+          align-self: center;
+        }
+        &[align-self="end"] {
+          align-self: flex-end;
+        }
+      }
+    }
+  }
+
+  > .ngx-item-content {
+    min-width: 1px;
+    flex: 1;
+
+    @if ngx-item-config(title){
+      /deep/ > .ngx-item-title {
+        display: block;
+        margin: $ngx-item-title-margin;
+      }
+    }
+
+    @if ngx-item-config(subtitle){
+      /deep/ > .ngx-item-subtitle {
+        display: block;
+        margin: $ngx-item-subtitle-margin; 
+      }
+    }
+  }
+
+  @if ngx-item-config(actions){
+    /deep/ > .ngx-item-actions {
+      display: block;
+      padding-left: $ngx-item-actions-padding;
+
+      @if ngx-item-config(actions-align-self){
+        &[align-self="start"] {
+          align-self: flex-start;
+        }
+        &[align-self="center"] {
+          align-self: center;
+        }
+        &[align-self="end"] {
+          align-self: flex-end;
+        }
+      }
+    }
+  }
+
+  @each $variant in ngx-item-config(variants) {
+    @include ngx-item-variant($variant);
+  }
+}

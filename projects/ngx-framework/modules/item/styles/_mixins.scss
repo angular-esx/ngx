@@ -1,0 +1,25 @@
+@mixin ngx-item-variant($name){
+  $variant-default: map-get(ngx-item-component($name), default);
+  $variant-active: map-get(ngx-item-component($name), active);
+  $variant-disabled: map-get(ngx-item-component($name), disabled);
+
+  &.ngx-item-color-#{$name} {
+    color: map-get($variant-default, foreground-color);
+    background-color: map-get($variant-default, background-color);
+    border-color: map-get($variant-default, border-color);
+    text-decoration: none;
+
+    @include ngx-state(ngx-item, 'focus hover active'){
+      color: map-get($variant-active, foreground-color);
+      background-color: map-get($variant-active, background-color);
+      border-color: map-get($variant-active, border-color);
+    }
+
+    @include ngx-state(ngx-item, 'disabled'){
+      color: map-get($variant-disabled, foreground-color);
+      background-color: map-get($variant-disabled, background-color);
+      border-color: map-get($variant-disabled, border-color);
+      cursor: not-allowed;
+    }
+  }
+}
