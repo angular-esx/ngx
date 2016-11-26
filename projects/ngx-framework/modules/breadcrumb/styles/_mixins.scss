@@ -1,0 +1,11 @@
+﻿@mixin ngx-breadcrumb-variant($name){
+  $variant-default: map-get(ngx-breadcrumb-component($name), default);
+
+  &.ngx-breadcrumb-color-#{$name} {
+    background-color: map-get($variant-default, background-color);
+
+    /deep/ > .ngx-breadcrumb-item {
+      color: map-get($variant-default, foreground-color) !important;
+    }
+  }
+}

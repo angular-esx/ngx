@@ -1,0 +1,29 @@
+﻿:host(.ngx-breadcrumb) {
+  display: flex;
+  padding: $ngx-breadcrumb-padding;
+  background-color: transparent;
+  
+  @include ngx-clearfix();
+
+  /deep/ > .ngx-breadcrumb-item {
+    &:not(:last-child) {
+      &::after {
+        display: inline-block;
+        text-decoration: underline;
+        padding: $ngx-breadcrumb-item-padding;
+        content: "/";
+      }
+      //Fix a bug for IE
+      //http://stackoverflow.com/questions/8820286/how-to-remove-only-underline-from-abefore/21902566#21902566
+      @include ngx-state(ngx-breadcrumb-item, 'self focus hover') {
+        &::after {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  @each $variant in ngx-breadcrumb-config(variants) {
+    @include ngx-breadcrumb-variant($variant);
+  }
+}

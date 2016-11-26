@@ -9,6 +9,15 @@ export {
 } from './alert';
 
 export {
+  ngxBreadcrumbModuleMetadata,
+  ngxBreadcrumbModule,
+  ngxBreadcrumbItemDirectiveMetadata,
+  ngxBreadcrumbItemDirective,
+  ngxBreadcrumbComponentMetadata,
+  ngxBreadcrumbComponent
+} from './breadcrumb';
+
+export {
   ngxButtonModuleMetadata,
   ngxButtonModule,
   ngxButtonComponentMetadata,

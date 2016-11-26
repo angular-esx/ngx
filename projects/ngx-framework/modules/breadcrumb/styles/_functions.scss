@@ -1,0 +1,26 @@
+@function ngx-breadcrumb-config($config-name){
+  @return map-get($ngx-breadcrumb-configs, $config-name);
+}
+
+@function ngx-breadcrumb-component($name){
+  @if $name == default {
+    @return $ngx-breadcrumb-default;
+  }
+  @else if $name == primary {
+    @return $ngx-breadcrumb-primary;
+  }
+  @else if $name == info {
+    @return $ngx-breadcrumb-info;
+  }
+  @else if $name == success {
+    @return $ngx-breadcrumb-success;
+  }
+  @else if $name == warning {
+    @return $ngx-breadcrumb-warning;
+  } 
+  @else if $name == danger {
+    @return $ngx-breadcrumb-danger;
+  }
+
+  @return null;
+}
