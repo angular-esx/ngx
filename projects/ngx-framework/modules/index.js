@@ -1,4 +1,14 @@
 export {
+  ngxAlertModuleMetadata,
+  ngxAlertModule,
+  ngxAlertLinkDirectiveMetadata,
+  ngxAlertLinkDirective,
+  ngxAlertComponentMetadata,
+  ngxAlertComponent,
+  ngxAlertService
+} from './alert';
+
+export {
   ngxButtonModuleMetadata,
   ngxButtonModule,
   ngxButtonComponentMetadata,

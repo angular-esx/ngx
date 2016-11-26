@@ -1,0 +1,20 @@
+@function ngx-alert-config($config-name){
+  @return map-get($ngx-alert-configs, $config-name);
+}
+
+@function ngx-alert-component($name){
+  @if $name == info {
+    @return $ngx-alert-info;
+  }
+  @else if $name == success {
+    @return $ngx-alert-success;
+  }
+  @else if $name == warning {
+    @return $ngx-alert-warning;
+  } 
+  @else if $name == danger {
+    @return $ngx-alert-danger;
+  }
+
+  @return null;
+}

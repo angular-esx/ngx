@@ -1,0 +1,23 @@
+﻿@mixin ngx-alert-position($position){
+  &.ngx-alert-position-#{$position} {
+    #{$position}: 0;
+  }
+}
+
+@mixin ngx-alert-variant($name){
+  $variant-default: map-get(ngx-alert-component($name), default);
+  $foreground: map-get($variant-default, foreground-color);
+
+  &.ngx-alert-color-#{$name} {
+    > .ngx-alert-container {
+      color: $foreground;
+      background-color: map-get($variant-default, background-color);
+      border-color: map-get($variant-default, border-color);
+
+      /deep/ .ngx-alert-link {
+        font-weight: bold !important;
+        color: $foreground !important;
+      }
+    }
+  }
+}

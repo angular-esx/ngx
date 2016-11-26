@@ -1,0 +1,69 @@
+﻿:host(.ngx-alert) {
+  display: block;
+  margin: $ngx-alert-margin;
+
+  @if ngx-alert-config(state-hidden){
+    &.ngx-alert-state-hidden{
+      display: none !important;
+    }
+  }
+
+  > .ngx-alert-container {
+    padding: $ngx-alert-container-padding;
+    border: $ngx-alert-container-border;
+    @include ngx-border-radius($ngx-alert-container-border-radius);
+  }
+
+  @if ngx-alert-config(positions){
+    &.ngx-alert-type-float {
+      width: 100%;
+      margin: 0;
+      position: fixed;
+      left: 0;
+    }
+
+    > .ngx-alert-container {
+      border-radius: 0;
+      box-sizing: border-box;
+    }
+
+    @each $position in ngx-alert-config(positions) {
+      @include ngx-alert-position($position);
+    }
+  }
+
+  @if ngx-alert-config(types-dismissible){
+    &.ngx-alert-type-dismissible {
+      > .ngx-alert-container {
+        padding: $ngx-alert-type-dismissible-padding;
+
+        > .ngx-alert-dismiss {
+          font-size: 1.5rem;
+          font-weight: 700;
+          line-height: 1;
+          color: ngx-color($ngx-color-gray, dark);
+          background: transparent;
+          padding: 0;
+          border: 0;
+          opacity: .2;
+          position: relative;
+          float: right;
+          top: -2px;
+          right: -21px;
+          text-decoration: none;
+          cursor: pointer;
+          outline: none;
+          appearance: none;
+
+          @include ngx-state(ngx-alert-dismiss, 'focus hover'){
+            opacity: .5;
+          }
+        }
+      }
+    }
+  }
+
+  @each $variant in ngx-alert-config(variants) {
+    @include ngx-alert-variant($variant);
+  }
+}

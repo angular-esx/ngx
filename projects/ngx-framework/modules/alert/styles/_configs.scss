@@ -1,0 +1,6 @@
+$ngx-alert-configs: (
+  state-hidden: true,
+  types-dismissible: true,
+  positions: (top, bottom),
+  variants: (info, success, warning, danger),
+) !default;

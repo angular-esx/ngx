@@ -1,0 +1,81 @@
+﻿$ngx-alert-margin: 0 0 1rem 0 !default;
+
+$ngx-alert-container-padding: 1rem !default;
+$ngx-alert-container-border: 1px solid transparent !default;
+$ngx-alert-container-border-radius: ngx-border-radius(base) !default;
+
+
+$ngx-alert-type-dismissible-padding: 1rem 2rem 1rem 1rem !default;
+
+
+$ngx-alert-info: (
+  active: (
+    foreground-color: ngx-color($ngx-color-info, dark),
+    background-color: ngx-color($ngx-color-contextual-info, dark),
+    border-color: ngx-color($ngx-color-contextual-info, dark),
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-info, dark),
+    background-color: ngx-color($ngx-color-contextual-info),
+    border-color: ngx-color($ngx-color-contextual-info)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-info, dark, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-contextual-info, default, $ngx-opacity-disabled),
+    border-color: ngx-color($ngx-color-contextual-info, default, $ngx-opacity-disabled)
+  )
+) !default;
+
+$ngx-alert-success: (
+  active: (
+    foreground-color: ngx-color($ngx-color-success, dark),
+    background-color: ngx-color($ngx-color-contextual-success, dark),
+    border-color: ngx-color($ngx-color-contextual-success, dark),
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-success, dark),
+    background-color: ngx-color($ngx-color-contextual-success),
+    border-color: ngx-color($ngx-color-contextual-success)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-success, dark, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-contextual-success, default, $ngx-opacity-disabled),
+    border-color: ngx-color($ngx-color-contextual-success, default, $ngx-opacity-disabled)
+  )
+) !default;
+
+$ngx-alert-warning: (
+  active: (
+    foreground-color: ngx-color($ngx-color-warning, dark),
+    background-color: ngx-color($ngx-color-contextual-warning, dark),
+    border-color: ngx-color($ngx-color-contextual-warning, dark),
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-warning, dark),
+    background-color: ngx-color($ngx-color-contextual-warning),
+    border-color: ngx-color($ngx-color-contextual-warning)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-warning, dark, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-contextual-warning, default, $ngx-opacity-disabled),
+    border-color: ngx-color($ngx-color-contextual-warning, default, $ngx-opacity-disabled)
+  )
+) !default;
+
+$ngx-alert-danger: (
+  active: (
+    foreground-color: ngx-color($ngx-color-danger, dark),
+    background-color: ngx-color($ngx-color-contextual-danger, dark),
+    border-color: ngx-color($ngx-color-contextual-danger, dark),
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-danger, dark),
+    background-color: ngx-color($ngx-color-contextual-danger),
+    border-color: ngx-color($ngx-color-contextual-danger)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-danger, dark, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-contextual-danger, default, $ngx-opacity-disabled),
+    border-color: ngx-color($ngx-color-contextual-danger, default, $ngx-opacity-disabled)
+  )
+) !default;
