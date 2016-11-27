@@ -170,3 +170,17 @@ export {
   ngxProgressComponentMetadata,
   ngxProgressComponent
 } from './progress';
+
+export {
+  ngxTabsModuleMetadata,
+  ngxTabsModule,
+  ngxTabHeaderComponentMetadata,
+  ngxTabHeaderComponent,
+  ngxTabContentDirectiveMetadata,
+  ngxTabContentDirective,
+  ngxTabDirectiveMetadata,
+  ngxTabDirective,
+  ngxTabsComponentMetadata,
+  ngxTabsComponent,
+  ngxTabsService
+} from './tabs';

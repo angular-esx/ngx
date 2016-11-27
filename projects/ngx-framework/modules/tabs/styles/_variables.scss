@@ -1,0 +1,43 @@
+﻿$ngx-tabs-headers-padding: 0 !default;
+$ngx-tabs-headers-margin: 0 0 1rem 0 !default;
+$ngx-tabs-headers-border-bottom: 1px solid ngx-color($ngx-color-gray, light-1) !default;
+
+
+$ngx-tabs-header-padding: .5em 1em !default;
+$ngx-tabs-header-margin:  0 0 -1px 0 !default;
+$ngx-tabs-header-border: 1px solid transparent !default;
+$ngx-tabs-header-border-radius: ngx-border-radius(base) !default;
+
+
+$ngx-tabs-header: (
+  active: (
+    foreground-color: ngx-color($ngx-color-gray, dark),
+    background-color: ngx-color($ngx-color-white, light),
+    border-color: ngx-color($ngx-color-gray, light-1) ngx-color($ngx-color-gray, light-1) transparent
+  ),
+  hover: (
+    border-color: ngx-color($ngx-color-gray, light-1) ngx-color($ngx-color-gray, light-1) ngx-color($ngx-color-gray, light-1)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-gray, dark)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-gray, dark, $ngx-opacity-disabled)
+  )
+) !default;
+
+
+$ngx-tabs-pill-header: (
+  active: (
+    foreground-color: ngx-color($ngx-color-white, light),
+    background-color: ngx-color($ngx-color-primary)
+  ),
+  default: (
+    foreground-color: ngx-color($ngx-color-gray, dark),
+    background-color: ngx-color($ngx-color-white, light)
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-gray, dark, $ngx-opacity-disabled),
+    background-color: ngx-color($ngx-color-white, light)
+  )
+) !default;

@@ -1,0 +1,17 @@
+﻿<div class="ngx-tabs-headers">
+  <div *ngFor="let tab of tabs; let i=index; trackBy:trackByTabs"
+       [class.ngx-tabs-header-state-active]="tab.isActive"
+       [class.ngx-tabs-header-state-disabled]="tab.isDisabled"
+       (click)="select(tab, i)"
+       class="ngx-tabs-header">
+    <template [ngx-portal-host]="tab.headerTemplate"></template>
+  </div>
+</div>
+
+<div class="ngx-tabs-contents">
+  <div *ngFor="let tab of tabs; let i=index; trackBy:trackByTabs">
+    <template [ngIf]="tab.isActive">
+      <template [ngx-portal-host]="tab.contentTemplate"></template>
+    </template>
+  </div>
+</div>

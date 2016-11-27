@@ -1,0 +1,90 @@
+﻿:host(.ngx-tabs) > .ngx-tabs-headers {
+  display: block;
+  padding: $ngx-tabs-headers-padding;
+  margin:$ngx-tabs-headers-margin;
+  border-bottom: $ngx-tabs-headers-border-bottom;
+
+  @include ngx-clearfix();
+
+  > .ngx-tabs-header {
+    $tabs-header-default: map-get($ngx-tabs-header, default);
+    $tabs-header-hover: map-get($ngx-tabs-header, hover);
+    $tabs-header-active: map-get($ngx-tabs-header, active);
+    $tabs-header-disabled: map-get($ngx-tabs-header, disabled);
+
+    display: block;
+    float: left;
+    color: map-get($tabs-header-default, foreground-color);
+    background-color: transparent;
+    text-decoration: none;
+    padding: $ngx-tabs-header-padding;
+    margin: $ngx-tabs-header-margin;    
+    border: $ngx-tabs-header-border;
+    cursor: pointer;
+    
+    @include ngx-border-radius($ngx-tabs-header-border-radius, top);
+
+    + .ngx-tabs-header {
+      margin-left: .2rem;
+    }
+
+    @include ngx-state(ngx-tabs-header, 'focus hover'){
+      border-color: map-get($tabs-header-hover, border-color);
+    }
+
+    @include ngx-state(ngx-tabs-header, 'active'){
+      color: map-get($tabs-header-active, foreground-color);
+      background-color: map-get($tabs-header-active, background-color);
+      border-color: map-get($tabs-header-active, border-color);
+    }
+
+    @include ngx-state(ngx-tabs-header, 'disabled'){
+      color: map-get($tabs-header-disabled, foreground-color);
+      border-color: transparent;
+      cursor: not-allowed;
+    }
+  }
+}
+
+
+@if ngx-tabs-config(type-pill) {
+  :host(.ngx-tabs).ngx-tabs-type-pill > .ngx-tabs-headers {
+    border-bottom: initial;
+
+    > .ngx-tabs-header { 
+      $tabs-header-default: map-get($ngx-tabs-pill-header, default);
+      $tabs-header-active: map-get($ngx-tabs-pill-header, active);
+      $tabs-header-disabled: map-get($ngx-tabs-pill-header, disabled);
+
+      color: map-get($tabs-header-default, foreground-color);
+      background-color: map-get($tabs-header-default, background-color);
+      border: initial;
+      
+      @include ngx-border-radius($ngx-tabs-header-border-radius);
+
+      @include ngx-state(ngx-tabs-header, 'active'){
+        color:  map-get($tabs-header-active, foreground-color);
+        background-color: map-get($tabs-header-active, background-color);
+      }
+
+      @include ngx-state(ngx-tabs-header, 'disabled'){
+        color: map-get($tabs-header-disabled, foreground-color);
+        background-color: map-get($tabs-header-disabled, background-color);
+      }
+    }
+  }
+}
+
+
+:host(.ngx-tabs) > .ngx-tabs-contents {
+  display: block;
+
+  > .ngx-tab {
+    display: none;
+    opacity: 0;
+
+    @include ngx-state(ngx-tab, 'active'){
+      display: block;
+    }
+  }
+}
