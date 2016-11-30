@@ -3,8 +3,6 @@ import {
   NgModule 
 } from '@angular/core';
 
-import { DOCUMENT_PROVIDERS } from '../../cores';
-
 import { ngxIconComponent } from './icon.component';
 import { ngxIconService } from './services/icon.service';
 
@@ -18,10 +16,7 @@ export var ngxIconModuleMetadata = Class({
     Object.assign(this, {
       id: 'ngx-icon',
       declarations: [].concat(_DIRECTIVES),
-      providers: [
-        DOCUMENT_PROVIDERS, 
-        ngxIconService
-      ],
+      providers: [ ngxIconService ],
       exports: [].concat(_DIRECTIVES)
     });
   }

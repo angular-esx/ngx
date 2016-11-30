@@ -8,7 +8,7 @@ export var ngxPaginationBuilder = Class({
     this.pages = [];
   },
 
-  build: function (totalPages, pageSize, startPage, setPageEmitter) {
+  build: function (currentPage, totalPages, pageSize, startPage, setPageEmitter) {
     var _page;
     var _setPageLink = function(page){
       return function(link){ page.link = link; };
@@ -42,6 +42,14 @@ export var ngxPaginationBuilder = Class({
       if (_page.number >= startPage) {
         _tempPages.push(_page);
       }
+    }
+
+    if(currentPage > 1){
+      _tempPages.splice(0, 0, Object.assign({ isPrevLink: true }, this._indexedPages[currentPage - 1]));
+    }
+
+    if(currentPage < totalPages){
+      _tempPages.push(Object.assign({ isNextLink: true }, this._indexedPages[currentPage + 1]));
     }
 
     this.pages = _tempPages;

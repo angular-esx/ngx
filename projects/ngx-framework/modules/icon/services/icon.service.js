@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 import { Http } from '@angular/http';
 
-import { DOCUMENT_TOKEN } from '../../../cores';
+import { DOCUMENT } from '@angular/platform-browser';
 
 import { ngxSvgIconConfig } from '../models/svg-icon-config.model';
 
@@ -19,7 +19,7 @@ var _observable = Observable.Observable;
 export var ngxIconService = Class({
   constructor: [
     Http,
-    Inject(DOCUMENT_TOKEN),
+    Inject(DOCUMENT),
 
     function ngxIconService(httpService, document) {
       this._defaultFontSet = '';

@@ -3,16 +3,11 @@
   Component,
   ElementRef,
   Renderer,
-  Inject,
   EventEmitter,
   ChangeDetectionStrategy
 } from '@angular/core';
 
-import { 
-  WINDOW_TOKEN,
-  ngxBaseComponent, 
-  ngxUtils 
-} from '../../cores';
+import { ngxBaseComponent, ngxUtils } from '../../cores';
 
 import { ngxPaginationBuilder } from './models/pagination-builder.model';
 
@@ -45,12 +40,10 @@ export var ngxPaginationComponent = Component(new ngxPaginationComponentMetadata
   constructor: [
     ElementRef,
     Renderer,
-    Inject(WINDOW_TOKEN),
 
-    function ngxPaginationComponent(elementRef, renderer, window) {
+    function ngxPaginationComponent(elementRef, renderer) {
       ngxBaseComponent.apply(this, arguments);
 
-      this.window = window;
       this.setPageEmitter = new EventEmitter();
       this.changePageEmitter = new EventEmitter();
     }
@@ -80,7 +73,7 @@ export var ngxPaginationComponent = Component(new ngxPaginationComponentMetadata
     this.startPage = this.calcStartPage();
 
     this.pageBuilder = this.initPageBuilder();
-    this.pageBuilder.build(this.totalPages, this.pageSize, this.startPage, this.setPageEmitter);
+    this.pageBuilder.build(this.currentPage, this.totalPages, this.pageSize, this.startPage, this.setPageEmitter);
 
      return _changeRecord;
   },
@@ -89,18 +82,12 @@ export var ngxPaginationComponent = Component(new ngxPaginationComponentMetadata
     return 'ngx-pagination';
   },
 
-  prev: function (event) {
-    this.changePage(event, this.pageBuilder.getPage(this.currentPage - 1), true);
-  },
-
-  next: function (event) {
-    this.changePage(event, this.pageBuilder.getPage(this.currentPage + 1), true);
-  },
-
-  changePage: function (event, page, doChangeManually) {
+  changePage: function (event, page) {
     if (page < 1 || page > this.totalPages) { return; }
 
-    var _isCanceled = false;
+    var _self = this,
+        _isCanceled = false;
+
     this.changePageEmitter.emit({
       page: Object.assign({}, page),
       cancel: function () {
@@ -113,13 +100,9 @@ export var ngxPaginationComponent = Component(new ngxPaginationComponentMetadata
 
     if (_isCanceled) { return; }
 
-    if(doChangeManually && page.link) {
-      this.window.location.href = page.link;
-    }
-
     this.currentPage = page.number;
     this.startPage = this.calcStartPage();
-    this.pageBuilder.build(this.totalPages, this.pageSize, this.startPage, this.setPageEmitter);
+    this.pageBuilder.build(this.currentPage, this.totalPages, this.pageSize, this.startPage, this.setPageEmitter);
   },
 
   calcStartPage: function() {
