@@ -9,6 +9,7 @@
     $state-default: map-get($ngx-page-item-state, default);
     $state-hover: map-get($ngx-page-item-state, hover);
     $state-active: map-get($ngx-page-item-state, active);
+    $state-disabled: map-get($ngx-page-item-state, disabled);
 
     position: relative;
     float: left;
@@ -29,6 +30,13 @@
       background-color: map-get($state-active, background-color);
       border-color: map-get($state-active, border-color);
       cursor: default;
+    }
+
+    @include ngx-state(ngx-page-item, 'disabled'){
+      color: map-get($state-disabled, foreground-color);
+      background-color: map-get($state-disabled, background-color);
+      border-color: map-get($state-disabled, border-color);
+      cursor: not-allowed;
     }
 
     &:first-child {

@@ -47,9 +47,15 @@ export var ngxPaginationBuilder = Class({
     if(currentPage > 1){
       _tempPages.splice(0, 0, Object.assign({ isPrevLink: true }, this._indexedPages[currentPage - 1]));
     }
+    else {
+      _tempPages.splice(0, 0, { link: '#', isPrevLink: true });
+    }
 
     if(currentPage < totalPages){
       _tempPages.push(Object.assign({ isNextLink: true }, this._indexedPages[currentPage + 1]));
+    }
+    else {
+      _tempPages.push({ link: '#', isNextLink: true });
     }
 
     this.pages = _tempPages;
