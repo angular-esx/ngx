@@ -1,23 +1,25 @@
 ﻿<template ngFor let-page [ngForOf]="pageBuilder.pages">
   <a *ngIf="page.isPrevLink && showPrevious"
-      rel="nofollow"
-      class="ngx-page-item" 
+      rel="nofollow" 
+      class="ngx-page-item"
+      [class.ngx-page-item-state-disabled]="page.link === '#'"
       [href]="page.link" 
       (click)="changePage($event, page)">
     &laquo;
   </a>
 
   <a  *ngIf="!page.isPrevLink && !page.isNextLink"
-      class="ngx-page-item"
-      [href]="page.link" 
+      class="ngx-page-item" 
       [class.ngx-page-item-state-active]="page.number === currentPage"
+      [href]="page.link"
       (click)="changePage($event, page)">
     {{page.number}}
   </a>
 
-  <a *ngIf="page.isNextLink && showNext" 
-      rel="nofollow"
-      class="ngx-page-item" 
+  <a *ngIf="page.isNextLink && showNext"
+      rel="nofollow" 
+      class="ngx-page-item"
+      [class.ngx-page-item-state-disabled]="page.link === '#'"
       [href]="page.link" 
       (click)="changePage($event, page)">
     &raquo;

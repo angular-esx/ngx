@@ -39,5 +39,10 @@ $ngx-page-item-state: (
     foreground-color: ngx-color($ngx-color-primary),
     background-color: ngx-color($ngx-color-white, light),
     border-color: ngx-color($ngx-color-black, light-1)
-  )
+  ),
+  disabled: (
+    foreground-color: ngx-color($ngx-color-primary),
+    background-color: ngx-color($ngx-color-gray, light-1),
+    borde-colorr: ngx-color($ngx-color-black, light-1)
+  ),
 ) !default;
