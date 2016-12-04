@@ -165,6 +165,19 @@ export {
 } from './pagination';
 
 export {
+  ngxPopoverModuleMetadata, 
+  ngxPopoverModule,
+  ngxPopoverTemplateDirectiveMetadata,
+  ngxPopoverTemplateDirective,
+  ngxPopoverDirectiveMetadata,
+  ngxPopoverDirective,
+  ngxPopoverComponentMetadata,
+  ngxPopoverComponent,
+  ngxPopoverService,
+  ngxPopoverOption
+} from './popover';
+
+export {
   ngxProgressModuleMetadata,
   ngxProgressModule,
   ngxProgressComponentMetadata,

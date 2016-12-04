@@ -1,0 +1,18 @@
+﻿$ngx-popover-font-size: ngx-font-size(sm) !default;
+$ngx-popover-max-width: 200px !default;
+$ngx-popover-background-color: ngx-color($ngx-color-white, light) !default;
+$ngx-popover-border-color: ngx-color($ngx-color-black, light-1) !default;
+$ngx-popover-border-radius: ngx-border-radius(lg) !default;
+$ngx-popover-z-index: ngx-z-index(above-2) !default;
+
+
+$ngx-popover-title-font-size: ngx-font-size(base) !default;
+$ngx-popover-title-padding: 8px 14px !default;
+$ngx-popover-title-background-color: ngx-color($ngx-color-gray, light-1);
+$ngx-popover-title-border-radius: $ngx-popover-border-radius !default;
+
+
+$ngx-popover-content-padding: 9px 14px !default;
+
+
+$ngx-popover-arrow-width: 10px !default;

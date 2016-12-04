@@ -1,0 +1,3 @@
+@function ngx-popover-config($config-name){
+  @return map-get($ngx-popover-configs, $config-name);
+}

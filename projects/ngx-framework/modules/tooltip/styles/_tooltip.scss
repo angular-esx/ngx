@@ -22,7 +22,7 @@
     @include ngx-border-radius($ngx-tooltip-border-radius);
   }
 
-   @each $position in ngx-tooltip-config(positions) {
+  @each $position in ngx-tooltip-config(positions) {
     @include ngx-tooltip-position($position);
   }
 }

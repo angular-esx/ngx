@@ -1,0 +1,108 @@
+﻿<h3>ngxPopover</h3>
+
+<br/><br/>
+
+<div>
+  <div class="popover-container"
+       ngx-popover
+       ngx-popover-title="this is title of popover"
+       ngx-popover-content="this is content of popover"
+       ngx-popover-position="top">Popover at top</div>
+</div>
+
+<br />
+
+<div>
+  <div class="popover-container" 
+       ngx-popover
+       ngx-popover-title="this is title of popover"
+       ngx-popover-content="this is content of popover"
+       ngx-popover-position="left">Popover at left</div>
+</div>
+
+<br />
+
+<div>
+  <div class="popover-container"
+       ngx-popover
+       ngx-popover-title="this is title of popover"
+       ngx-popover-content="this is content of popover"
+       ngx-popover-position="right">Popover at right</div>
+</div>
+
+<br/>
+
+<div>
+  <div class="popover-container"
+       ngx-popover
+       ngx-popover-title="this is title of popover"
+       ngx-popover-content="this is content of popover"
+       ngx-popover-position="bottom">Popover at bottom</div>
+</div>
+
+<br />
+
+<hr />
+
+<h3>ngxPopover with delay</h3>
+
+<br />
+
+<div>
+  <div class="popover-container"
+       ngx-popover
+       ngx-popover-title="this is title of popover"
+       ngx-popover-content="this is content of popover"
+       ngx-popover-position="top"
+       [ngx-popover-delay]="delay">Popover with delay</div>
+</div>
+
+<br/>
+
+<hr />
+
+<h3>ngxPopover with template</h3>
+
+<br/>
+
+<div>
+  <div id="myPopoverWithTemplate" class="popover-container"
+       ngx-popover
+       ngx-popover-title="this is title of popover"
+       ngx-popover-content="this is content of popover"
+       ngx-popover-position="top"
+       ngx-popover-template="myTemplate">Popover with template</div>
+</div>
+
+<template id="myTemplate" ngxPopoverTemplate>
+  <div (click)="alert()">Click me!!!</div>
+</template>
+
+<br />
+
+<hr />
+
+<h3>ngxPopover with service</h3>
+
+<br />
+
+<div>
+  <div id="myPopover" class="popover-container"
+       (click)="togglePopover()"
+       ngx-popover
+       ngx-popover-title="this is title of popover"
+       ngx-popover-content="this is content of popover"
+       ngx-popover-state="disabled"
+       ngx-popover-position="top">Popover with service</div>
+</div>
+
+<style>
+  .popover-container {
+    background-color: red; 
+    color: white; 
+    width: 200px; 
+    padding: 5px; 
+    margin: 5px auto;
+    text-align: center;
+  }
+</style>

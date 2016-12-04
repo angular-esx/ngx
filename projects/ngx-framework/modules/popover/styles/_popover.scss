@@ -1,0 +1,50 @@
+﻿:host(.ngx-popover) {
+  display: block;
+  position: absolute;
+  z-index: $ngx-popover-z-index;
+  max-width: $ngx-popover-max-width;
+  padding: 1px;
+  font-size: $ngx-popover-font-size;
+  background-color: $ngx-popover-background-color;
+  background-clip: padding-box;
+  border: 1px solid $ngx-popover-border-color;
+
+  @include ngx-border-radius($ngx-popover-border-radius);
+
+  & .ngx-popover-title {
+    font-size: $ngx-popover-title-font-size;
+    padding: $ngx-popover-title-padding;
+    margin: 0;
+    background-color: $ngx-popover-title-background-color;
+    border-bottom: 1px $ngx-popover-border-color;
+
+    @include ngx-border-radius($ngx-popover-title-border-radius, top);
+  }
+
+  & .ngx-popover-content {
+    padding: $ngx-popover-content-padding;
+  }
+
+  & .ngx-popover-arrow {
+    border-width: ($ngx-popover-arrow-width - 1);
+
+    &::after {
+      content: "";
+      border-width: $ngx-popover-arrow-width;
+    }
+
+    &,
+    &::after {
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-color: transparent;
+      border-style: solid;
+    }
+  }
+
+  @each $position in ngx-popover-config(positions) {
+    @include ngx-popover-position($position);
+  }
+}
