@@ -1,0 +1,48 @@
+@mixin ngx-tooltip-position($position){
+  &.ngx-tooltip-position-#{$position} {
+    @if $position == top {
+      margin-top: -$ngx-tooltip-arrow-width;
+
+      & .ngx-tooltip-arrow {
+        bottom: -$ngx-tooltip-arrow-width;
+        left: 50%;
+        margin-left: -$ngx-tooltip-arrow-width;
+        border-width: $ngx-tooltip-arrow-width $ngx-tooltip-arrow-width 0;
+        border-top-color: $ngx-tooltip-arrow-border-color;
+      }
+    }
+    @else if $position == right {
+      margin-left: $ngx-tooltip-arrow-width;
+
+      & .ngx-tooltip-arrow {
+        top: 50%;
+        left: -$ngx-tooltip-arrow-width;
+        margin-top: -$ngx-tooltip-arrow-width;
+        border-width: $ngx-tooltip-arrow-width $ngx-tooltip-arrow-width $ngx-tooltip-arrow-width 0;
+        border-right-color: $ngx-tooltip-arrow-border-color;
+      }
+    }
+    @else if $position == bottom {
+      margin-top: $ngx-tooltip-arrow-width;
+
+      & .ngx-tooltip-arrow {
+        top: -$ngx-tooltip-arrow-width;
+        left: 50%;
+        margin-left: -$ngx-tooltip-arrow-width;
+        border-width: 0 $ngx-tooltip-arrow-width $ngx-tooltip-arrow-width;
+        border-bottom-color: $ngx-tooltip-arrow-border-color;
+      }
+    }
+    @else if $position == left {
+      margin-left: -$ngx-tooltip-arrow-width;
+
+      & .ngx-tooltip-arrow {
+        top: 50%;
+        right: -$ngx-tooltip-arrow-width;
+        margin-top: -$ngx-tooltip-arrow-width;
+        border-width: $ngx-tooltip-arrow-width 0 $ngx-tooltip-arrow-width $ngx-tooltip-arrow-width;
+        border-left-color: $ngx-tooltip-arrow-border-color;
+      }
+    }
+  }
+}

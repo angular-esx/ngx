@@ -184,3 +184,17 @@ export {
   ngxTabsComponent,
   ngxTabsService
 } from './tabs';
+
+export {
+  ngxTooltipModuleMetadata, 
+  ngxTooltipModule,
+  ngxTooltipTemplateDirectiveMetadata,
+  ngxTooltipTemplateDirective,
+  ngxTooltipDirectiveMetadata,
+  ngxTooltipDirective,
+  ngxTooltipComponentMetadata,
+  ngxTooltipComponent,
+  ngxTooltipService,
+  ngxTooltipOption,
+  ngxTooltipPositionHelper
+} from './tooltip';

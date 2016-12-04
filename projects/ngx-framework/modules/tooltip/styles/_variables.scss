@@ -1,0 +1,11 @@
+﻿$ngx-tooltip-font-size: ngx-font-size(sm) !default;
+$ngx-tooltip-padding: 3px 8px !default;
+$ngx-tooltip-max-width: 200px !default;
+$ngx-tooltip-foreground-color: ngx-color($ngx-color-white, light) !default;
+$ngx-tooltip-background-color: ngx-color($ngx-color-black, dark) !default;
+$ngx-tooltip-z-index: ngx-z-index(above-2) !default;
+$ngx-tooltip-border-radius: ngx-border-radius(base) !default;
+
+
+$ngx-tooltip-arrow-width: 5px !default;
+$ngx-tooltip-arrow-border-color: ngx-color($ngx-color-black, dark) !default;

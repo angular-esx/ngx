@@ -1,0 +1,28 @@
+﻿:host(.ngx-tooltip) {
+  display: block;
+  position: absolute;
+  z-index: $ngx-tooltip-z-index;
+  font-size: $ngx-tooltip-font-size;
+
+  & .ngx-tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
+
+  & .ngx-tooltip-content {
+    text-align: center;
+    padding: $ngx-tooltip-padding;
+    max-width: $ngx-tooltip-max-width;
+    color: $ngx-tooltip-foreground-color;
+    background-color: $ngx-tooltip-background-color;
+
+    @include ngx-border-radius($ngx-tooltip-border-radius);
+  }
+
+   @each $position in ngx-tooltip-config(positions) {
+    @include ngx-tooltip-position($position);
+  }
+}
